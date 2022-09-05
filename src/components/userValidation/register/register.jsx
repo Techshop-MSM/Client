@@ -21,7 +21,6 @@ export const Register = () => {
     confirmPassword: ""
   })
 
-
   const getPassword = async () => {
     const newPassword = await generatePassword()
     setRegisterData({ ...registerData, "confirmPassword": newPassword, "password": newPassword })
