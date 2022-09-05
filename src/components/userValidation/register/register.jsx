@@ -1,73 +1,89 @@
-import "../../../App.css";
-import { Link } from "react-router-dom";
-import { inputTemplate } from "./registerTemplate";
-import { FormInputs } from "./formInputs"
-import { backendURL } from "../../../App.jsx";
+import '../../../App.css'
+import { Link } from 'react-router-dom'
+import { inputTemplate } from './registerTemplate'
+import { FormInputs } from './formInputs'
+import { backendURL } from '../../../App.jsx'
+import { useEffect, useState } from 'react'
 
 export const Register = () => {
-  const onChange = (e) => {
-    setRegisterData({ ...registerData, [e.target.name]: e.target.value })
-  }
+    const onChange = (e) => {
+        setRegisterData({ ...registerData, [e.target.name]: e.target.value })
+    }
 
-  if(registerData.confirmPassword != registerData.password){
-    console.log("Passwords are not equal!")
-    return validationFail = "Passwords are not equal!"
-  }
+    const [userGroupe, setUserGroupe] = useState()
+    const [registerData, setRegisterData] = useState({
+        mail: '',
+        confirmMail: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        userGroupe: userGroupe,
+    })
 
-  const [registerData, setRegisterData] = useState({
-    mail: "",
-    username: "",
-    password: "",
-    confirmPassword: ""
-  })
+    useEffect(() => {
+   }, "userGroupe")
 
-  const getPassword = async () => {
-    const newPassword = await generatePassword()
-    setRegisterData({ ...registerData, "confirmPassword": newPassword, "password": newPassword })
-  };
+    const validatePassword = () => {
+        if (registerData.confirmPassword != registerData.password) {
+            return 'Passwords are not equal!'
+        }
+    }
 
-  const password = registerData.password === registerData.confirmPassword && registerData.password.length > 9
-  const isFilled = registerData.email.length > 5 && registerData.firstname.length > 2 && registerData.lastname.length > 5 && registerData.username.length > 5
+    const getPassword = async () => {
+        const newPassword = await generatePassword()
+        setRegisterData({
+            ...registerData,
+            confirmPassword: newPassword,
+            password: newPassword,
+        })
+    }
 
-  if (password === true && isFilled === true) {
-    console.log("YES")
-  } else {
-    console.log("NO")
-  }
+    const getUserId = async (e) => {
+        e.preventDefault()
+        // const isValidatated = validateData(registerData)
+        // if (isValidatated === false) return
 
-  const getUserId = async (e) => {
-    e.preventDefault()
-    // const isValidatated = validateData(registerData)
-    // if (isValidatated === false) return
+        const result = await fetch(`${backendURL}/user/register`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(registerData),
+        })
+    }
 
-    const result = await fetch(`${backendURL}/user/register`,
-      {
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registerData)
-      }
+    const kindOfUser = (e) => {
+      setUserGroupe(e.target.value)
+      setUserGroupe(e.target.value)
+      console.log(userGroupe)
+    }
+
+    return (
+        <section>
+            <article className="signArticle">
+                <div className="signContainer">
+                    <h2 className="dark">Sign Up</h2>
+                    <form className="form" onSubmit={(e) => getUserId(e)}>
+                      <select name="" id="" onChange={kindOfUser}>
+                        <option value="null">Auswählen</option>
+                        <option value="private">Privatkunde</option>
+                        <option value="company">Geschäftskunde</option>
+                      </select>
+                        {inputTemplate.map((input) => (
+                            <FormInputs
+                                key={input.id}
+                                {...input}
+                                value={registerData[inputTemplate.name]}
+                                onChange={onChange}
+                            />
+                        ))}
+                        <label htmlFor="">{validatePassword()}</label>
+                        <input type="submit" value="Sign Up" />
+                        <Link to="/login"></Link>
+                    </form>
+                </div>
+            </article>
+        </section>
     )
-  }
-
-  return (
-    <section>
-      <article className="signArticle">
-        <div className="signContainer">
-          <h2 className="dark">Sign Up</h2>
-          <form className="form" onSubmit={(e) => getUserId(e)}>
-            {inputTemp.map((input) => (
-              <FormInputs key={input.id} {...input} value={registerData[inputTemplate.name]} onChange={onChange} />
-            ))}
-            {/* registerData.password ?  */}
-            <input type="button" value="Generate Password" onClick={() => getPassword()} />
-            <input type="submit" value="Sign Up" />
-            <Link to="/login"></Link>
-          </form>
-        </div>
-      </article>
-    </section>
-  )
 }

@@ -8,10 +8,10 @@ export const inputTemplate = [
     },
     {
         id: 2,
-        name: 'username',
+        name: 'Ansprechpartner',
         type: 'text',
-        placeholder: 'Username',
-        label: 'Username',
+        placeholder: 'Ansprechpartner',
+        label: 'Ansprechpartner',
     },
     {
         id: 3,

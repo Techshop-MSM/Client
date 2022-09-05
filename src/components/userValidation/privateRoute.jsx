@@ -5,5 +5,6 @@ import { Navigate } from 'react-router-dom'
 export const PrivateRoute = ({ children }) => {
     //const {loginToken} = useContext(AppContext)
     const loginToken = 'ABC123'
-    return loginToken ? children : <Navigate to="/login" replace />
+    return loginToken ? children : <Navigate to="/register" replace /> //<Navigate to="/login" replace />
 }
+

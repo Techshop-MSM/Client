@@ -4,7 +4,6 @@ export const FormInputs = (props) => {
         <div>
             <label htmlFor="{id}">{label}</label>
             <input  {...inputProps} onChange={onChange}/>
-            <label htmlFor="validation">validationFail</label>
         </div>
     )
 }
