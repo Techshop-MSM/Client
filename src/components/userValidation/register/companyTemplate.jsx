@@ -1,4 +1,4 @@
-export const inputTemplate = [
+export const companyTemplate = [
     {
         id: 1,
         name: 'email',
@@ -8,7 +8,14 @@ export const inputTemplate = [
     },
     {
         id: 2,
-        name: 'Ansprechpartner',
+        name: 'company',
+        type: 'text',
+        placeholder: 'Firmenname',
+        label: 'Firmenname',
+    },
+    {
+        id: 2,
+        name: 'contactPerson',
         type: 'text',
         placeholder: 'Ansprechpartner',
         label: 'Ansprechpartner',
