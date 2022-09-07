@@ -14,6 +14,7 @@ import { Profile } from './components/user/profile'
 import { Wishlist } from './components/user/wishlist'
 import { Invoices } from './components/user/invoices'
 
+
 // Support
 import { DashboardSupport } from './components/manager/support/dashboard'
 import { Chat } from './components/manager/support/chat'
@@ -24,6 +25,9 @@ import { CreateTask } from './components/manager/support/create-task'
 import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
+
+/* //BOOTSTRAP
+import 'bootstrap/dist/css/bootstrap.min.css'; */
 
 export const backendURL = 'http://localhost:6000'
 
@@ -124,7 +128,7 @@ function App() {
                 <Route
                     path="/tasks"
                     element={
-                        <PrivateRoute>
+                        <PrivateRoute>TEST
                             <Tasks />
                         </PrivateRoute>
                     }

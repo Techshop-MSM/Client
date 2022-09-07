@@ -1,0 +1,559 @@
+
+  /* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+  
+  /* Carousel base class */
+  .carousel {
+    margin-bottom: 4rem;
+  }
+  
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+  }
+  
+  
+  /* MARKETING CONTENT
+  -------------------------------------------------- */
+  
+  /* Center align the text within the three columns below the carousel */
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* rtl:begin:ignore */
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  
+  /* rtl:end:ignore */
+  
+  
+  /* Featurettes
+  ------------------------- */
+  
+  .featurette-divider {
+    margin: 5rem 0;
+    /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  /* rtl:begin:remove */
+  .featurette-heading {
+    letter-spacing: -.05rem;
+  }
+  
+  /* rtl:end:remove */
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+  
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
+
+
+  body {
+    padding-top: 0rem;
+}
+
+.cardcontainer {
+    width: 99%;
+    height: 100%;
+    background-color: white;
+    transition: 0.1s;
+    color: rgb(0, 0, 0);
+}
+
+.cardcontainer:hover {
+    box-shadow: 0 0 45px gray;
+}
+
+.photo {
+    height: 300px;
+    width: 100%;
+}
+
+.photo img {
+    height: 100%;
+    width: 100%;
+}
+
+.txt1 {
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+.content {
+    width: 80%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -10px;
+}
+
+.preview-badge {
+    width: 90px;
+    height: 30px;
+    background-color: #E74C3C;
+    color: white;
+    position: relative;
+    top: -30px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.txt4 {
+    font-size: 20px;
+    position: relative;
+    top: 33px;
+}
+
+.txt5 {
+    position: relative;
+    top: 18px;
+    color: #E74C3C;
+    font-size: 23px;
+}
+
+.txt2 {
+    position: relative;
+    top: 10px;
+}
+
+.cardcontainer:hover>.photo {
+    animation: move1 0.35s ease both;
+}
+
+@keyframes move1 {
+    0% {
+        height: 300px
+    }
+
+    50% {
+        height: 100px;
+        margin: auto;
+    }
+
+    100% {
+        height: 130px;
+        width: 50%;
+        margin: auto;
+    }
+}
+
+.cardcontainer:hover {
+    border-bottom-style: double;
+    border-bottom-color: #E74C3C;
+    border-bottom-width: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #fff;
+}
+
+.cardcontainer:hover>.footer {
+    display: block;
+}
+
+.cardcontainer:hover>.content {
+    height: 300px;
+    display: none;
+}
+
+.footer {
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: none;
+}
+
+.txt3 {
+    position: relative;
+    top: 18px;
+    font-size: 14px;
+}
+
+
+/*TOP_MENU*/
+.navbar .megamenu {
+    padding: 1rem;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+    .navbar .has-megamenu {
+        position: static !important;
+    }
+
+    .navbar .megamenu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+    }
+
+}
+
+/* ============ desktop view .end// ============ */
+
+
+/* ============ mobile view ============ */
+@media(max-width: 991px) {
+
+    .navbar.fixed-top .navbar-collapse,
+    .navbar.sticky-top .navbar-collapse {
+        overflow-y: auto;
+        max-height: 90vh;
+        margin-top: 10px;
+    }
+}
+
+/* ============ mobile view .end// ============ */
+
+
+/*LOGINMODAL*/
+.modal-backdrop {
+    --bs-backdrop-zindex: -100 !important;
+    --bs-backdrop-bg: #2b00ea;
+    --bs-backdrop-opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-backdrop-zindex);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bs-backdrop-bg);
+}
+
+
+/*TESTOVERFLOW*/
+@media screen and (max-width: 1000px) {
+    .top {
+        margin-bottom: 0 !important;
+    }
+
+    .under {
+        position: absolute !important;
+        z-index: 100;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .top {
+        margin-bottom: 900px;
+    }
+
+    .under {
+        position: fixed;
+        z-index: 0;
+        bottom: 0;
+    }
+}
+
+.top {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+}
+
+.under {
+    background: #fff;
+    height: 680px;
+    width: 100% !important;
+    color: #000;
+}
+
+/*VERGLEICHSMODAL*/
+#myDIV {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+#content {
+    height: 1000px;
+    width: 1980px;
+    background-color: #fff;
+    ;
+}
+
+.comparing-bg {
+    background-color: green !important;
+}
+
+.comparing-bg:hover {
+    background-color: red;
+}
+
+
+/*FILTER-SLIDER*/
+.slidecontainer {
+    width: 100% !important;
+    color: #000;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 45px;
+    background: #adadad;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 55px;
+    background: #04AA6D;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 85px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+
+/*Testhover Megamenu*/
+.testhover div {
+  color: red;
+  display: none;
+}
+.testhover:hover div{
+  display: inline;
+}
+
+/*JS-MEGAMENU*/
+description {
+  width: 80%;
+  margin: 50px auto;
+}
+
+
+
+.menu-container {
+  width: 80%;
+  margin: 0 auto;
+  background: #e9e9e9;
+}
+
+.menu-mobile {
+  display: none;
+  padding: 20px;
+}
+.menu-mobile:after {
+    content: "\f394";
+    font-family: "Ionicons";
+    font-size: 2.5rem;
+    padding: 0;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-25%);
+  }
+
+.menu-dropdown-icon:before  {
+    content: "\f489";
+    font-family: "Ionicons";
+    display: none;
+    cursor: pointer;
+    float: right;
+    padding: 1.5em 2em;
+    background: #fff;
+    color: #333;
+}
+
+
+.menu ul {
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+    .menu:before ::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .menu li {
+      float: left;
+      background: #e9e9e9;
+      padding: 0;
+      margin: 0;
+    }
+      .menu a {
+        text-decoration: none;
+        padding: 1.5em 3em;
+        display: block;
+      }
+
+      .menu-container:hover {
+        background: #f0f0f0;
+      }
+      menu ul {
+        display: none;
+        width: 100%;
+        background: #f0f0f0;
+        padding: 20px;
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        margin: 0;
+        list-style: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+        .menu:before,
+        menu:after {
+          content: "";
+          display: table;
+        }
+        menu:after {
+          clear: both;
+        }
+        menu li {
+          margin: 0;
+          padding-bottom: 0;
+          list-style: none;
+          width: 25%;
+          background: none;
+          float: left;
+        }
+          .menu a {
+            color: #777;
+            padding: .2em 0;
+            width: 95%;
+            display: block;
+            border-bottom: 1px solid #ccc;
+          }
+          menu ul {
+            display: block;
+            padding: 0;
+            margin: 10px 0 0;
+            list-style: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+            .menu:before,
+            .menu:after {
+              content: "";
+              display: table;
+            }
+            .menu:after {
+              clear: both;
+            }
+            .menu li {
+              float: left;
+              width: 100%;
+              padding: 10px 0;
+              margin: 0;
+              font-size: .8em;
+            }
+        .menu.normal-sub {
+          width: 300px;
+          left: auto;
+          padding: 10px 20px;
+        }
+         .menu li {
+            width: 100%;
+         }
+            .menu a {
+              border: 0;
+              padding: 1em 0;
+            }
+
+@media only screen and (max-width: 959px) {
+  .menu-container {
+    width: 100%;
+  }
+  .menu-mobile {
+    display: block;
+  }
+  .menu-dropdown-icon::before {
+      display: block;
+    }
+  }
+  .menu ul li a {
+
+      display: none;
+        width: 100%;
+        float: none;
+        display: block;
+          padding: 1.5em;
+          width: 100%;
+          display: block;
+        > ul {
+          position: relative;
+          &.normal-sub {
+            width: 100%;
+          }
+          > li {
+            float: none;
+            width: 100%;
+            margin-top: 20px;
+            &:first-child {
+              margin: 0;
+            }
+            > ul {
+              position: relative;
+              > li {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .show-on-mobile {
+      display: block;
+    }
+  }
+}
