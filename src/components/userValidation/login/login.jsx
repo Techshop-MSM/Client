@@ -7,6 +7,10 @@ export const Login = () => {
     const passwordRef = useRef()
     const navigate = useNavigate()
 
+    // LOGIN TEST
+    const user = "Testi"
+    const password = "123"
+
     const getLoginData = async (e) => {
         e.preventDefault()
         const loginData = {
@@ -14,21 +18,23 @@ export const Login = () => {
             password: passwordRef.current.value,
         }
 
-        const res = await fetch(`${backendURL}/user/login`, {
-            method: 'post',
-            withCretentials: true,
+        // const res = await fetch(`${backendURL}/user/login`, {
+        //     method: 'post',
+        //     withCretentials: true,
 
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(loginData),
-        })
+        //     headers: {
+        //         Accept: 'application/json',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(loginData),
+        // })
 
-        console.log(res)
-        console.log(res.auth)
-
-        saveInLocalStorage('auth', res.auth)
+        // console.log(res)
+        // console.log(res.auth)
+        // saveInLocalStorage('auth', res.auth)
+        saveInLocalStorage('auth', user)
+        loginData.username === user && loginData.password === password &&
+        navigate( "/dashboard", {replace:true})
     }
 
     return (
