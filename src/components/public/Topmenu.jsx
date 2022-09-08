@@ -34,6 +34,10 @@ export function Topmenu() {
               Link
             </Nav.Link>
           </Nav>
+        
+          <Button variant="primary" onClick={() => setModalShow(true)}>
+        LogIn / Register
+      </Button>
           <Form className='d-flex'>
             <Form.Control
               type='search'
