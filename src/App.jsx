@@ -25,11 +25,9 @@ import { CreateTask } from './components/manager/support/create-task'
 import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
+import { ValidationModal } from './components/userValidation/validationModal'
 
-/* //BOOTSTRAP
-import 'bootstrap/dist/css/bootstrap.min.css'; */
-
-export const backendURL = 'http://localhost:6000'
+export const backendURL = 'http://localhost:5500'
 
 function App() {
     return (
@@ -38,7 +36,7 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/basket" element={<Basket />} />
-                <Route path="/register" element={<Register />} />
+                <Route path="/vali" element={<ValidationModal />} />
 
                 {/* PROTECTED ROUTES - /user */}
                 <Route
