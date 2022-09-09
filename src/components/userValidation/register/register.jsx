@@ -11,15 +11,12 @@ export const Register = () => {
         setRegisterData({ ...registerData, [e.target.name]: e.target.value })
     }
 
-    const [userGroupe, setUserGroupe] = useState([
-        {
-            kind: '',
-        },
-    ])
-
-    useEffect(() => {
-        //setUserGroupe()
-    }, [userGroupe])
+    // const [userGroupe, setUserGroupe] = useState([
+    //     {
+    //         kind: '',
+    //     },
+    // ])
+    const [userGroupe, setUserGroupe] = useState('')
 
     const [registerData, setRegisterData] = useState({
         mail: '',
@@ -30,6 +27,10 @@ export const Register = () => {
         confirmPassword: '',
         userGroupe: '',
     })
+
+    useEffect(() => {
+        console.log('regData:', registerData)
+    }, [registerData])
 
     const validatePassword = () => {
         if (registerData.confirmPassword != registerData.password) {
@@ -42,24 +43,20 @@ export const Register = () => {
         // const isValidatated = validateData(registerData)
         // if (isValidatated === false) return
 
-        const result = await fetch(`${backendURL}/user/register`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(registerData),
-        })
-    }
-
-    const kindOfUser = (e) => {
-        setUserGroupe({ kind: e.target.value })
-        registerData.userGroupe = userGroupe
-        console.log(userGroupe)
+        // const result = await fetch(`${backendURL}/register`, {
+        //     method: 'POST',
+        //     headers: {
+        //         Accept: 'application/json',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(registerData),
+        // })
         console.log(registerData)
     }
 
-    const userOptions = ['null', 'private', 'company']
+    // const kindOfUser = (e) => {
+    //     setUserGroupe( e.target.value )
+    // }
 
     return (
         <section>
@@ -67,12 +64,12 @@ export const Register = () => {
                 <div className="signContainer">
                     <h2 className="dark">Sign Up</h2>
                     <form className="form" onSubmit={(e) => getUserId(e)}>
-                        <select name="" id="" onChange={kindOfUser}>
+                        <select name="userGroupe" id="" onChange={onChange}>
                             <option value="null">Auswählen</option>
                             <option value="private">Privatkunde</option>
                             <option value="company">Geschäftskunde</option>
                         </select>
-                        {userGroupe.kind === 'private'
+                        {userGroupe === 'private'
                             ? inputTemplate.map((input) => (
                                   <FormInputs
                                       key={input.id}
@@ -83,7 +80,7 @@ export const Register = () => {
                               ))
                             : companyTemplate.map((input) => (
                                   <FormInputs
-                                      key={input.id}
+                                      key={`c_${input.id}`}
                                       {...input}
                                       value={registerData[inputTemplate.name]}
                                       onChange={onChange}

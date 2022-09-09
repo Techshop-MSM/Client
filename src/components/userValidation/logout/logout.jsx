@@ -1,7 +1,5 @@
-import { deleteInLocalStorage } from "../../reusables/localStorage"
-
+import { deleteInLocalStorage } from '../../reusables/codeSnippets/localStorage'
 
 export const Logout = () => {
     deleteInLocalStorage('auth')
-    //logout( "/", {replace:true})
 }

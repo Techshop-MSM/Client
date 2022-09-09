@@ -1,40 +1,37 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router'
-import { saveInLocalStorage } from '../../reusables/localStorage'
+import { backendURL } from '../../../App'
+import { saveInLocalStorage } from '../../reusables/codeSnippets/localStorage'
 
 export const Login = () => {
     const loginRef = useRef()
     const passwordRef = useRef()
     const navigate = useNavigate()
 
-    // LOGIN TEST
-    const user = "Testi"
-    const password = "123"
-
     const getLoginData = async (e) => {
         e.preventDefault()
         const loginData = {
-            username: loginRef.current.value,
+            identifier: loginRef.current.value,
             password: passwordRef.current.value,
         }
 
-        // const res = await fetch(`${backendURL}/user/login`, {
-        //     method: 'post',
-        //     withCretentials: true,
+        const res = await fetch(`${backendURL}/login`, {
+            method: 'post',
+            withCredentials: true,
 
-        //     headers: {
-        //         Accept: 'application/json',
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(loginData),
-        // })
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+        })
 
-        // console.log(res)
-        // console.log(res.auth)
-        // saveInLocalStorage('auth', res.auth)
-        saveInLocalStorage('auth', user)
-        loginData.username === user && loginData.password === password &&
-        navigate( "/dashboard", {replace:true})
+        const resData = await res.json()
+        console.log(resData)
+        console.log(resData.auth)
+        saveInLocalStorage('auth', resData.auth)
+
+        res.status === 200 && navigate('/dashboard', { replace: true })
     }
 
     return (
