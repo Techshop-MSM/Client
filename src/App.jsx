@@ -14,6 +14,7 @@ import { Profile } from './components/user/profile'
 import { Wishlist } from './components/user/wishlist'
 import { Invoices } from './components/user/invoices'
 
+
 // Support
 import { DashboardSupport } from './components/manager/support/dashboard'
 import { Chat } from './components/manager/support/chat'
@@ -125,7 +126,7 @@ function App() {
                 <Route
                     path="/tasks"
                     element={
-                        <PrivateRoute>
+                        <PrivateRoute>TEST
                             <Tasks />
                         </PrivateRoute>
                     }
