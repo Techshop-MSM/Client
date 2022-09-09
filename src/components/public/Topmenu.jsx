@@ -4,6 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { LogInModal } from './LogInModal'
+import { ShoppingCartPreview } from './ShoppingCartPreview'
+ 
 
 export function Topmenu() {
   return (
@@ -34,10 +37,8 @@ export function Topmenu() {
               Link
             </Nav.Link>
           </Nav>
-        
-          <Button variant="primary" onClick={() => setModalShow(true)}>
-        LogIn / Register
-      </Button>
+          <ShoppingCartPreview/>
+          <LogInModal/>
           <Form className='d-flex'>
             <Form.Control
               type='search'
