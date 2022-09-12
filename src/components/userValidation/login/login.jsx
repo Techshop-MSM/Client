@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router'
-import { saveInLocalStorage } from '../../reusables/localStorage'
+import { backendURL } from '../../../App'
+import { saveInLocalStorage } from '../../reusables/codeSnippets/localStorage'
 
 export const Login = () => {
     const loginRef = useRef()
@@ -10,13 +11,13 @@ export const Login = () => {
     const getLoginData = async (e) => {
         e.preventDefault()
         const loginData = {
-            username: loginRef.current.value,
+            identifier: loginRef.current.value,
             password: passwordRef.current.value,
         }
 
-        const res = await fetch(`${backendURL}/user/login`, {
+        const res = await fetch(`${backendURL}/login`, {
             method: 'post',
-            withCretentials: true,
+            withCredentials: true,
 
             headers: {
                 Accept: 'application/json',
@@ -25,10 +26,12 @@ export const Login = () => {
             body: JSON.stringify(loginData),
         })
 
-        console.log(res)
-        console.log(res.auth)
+        const resData = await res.json()
+        console.log(resData)
+        console.log(resData.auth)
+        saveInLocalStorage('auth', resData.auth)
 
-        saveInLocalStorage('auth', res.auth)
+        res.status === 200 && navigate('/dashboard', { replace: true })
     }
 
     return (
