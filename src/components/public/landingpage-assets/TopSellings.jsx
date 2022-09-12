@@ -4,10 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { ComparingModal } from '../ComparingModal';
+import { DetailModal } from './DetailModal';
+
 
 export function TopSellings() {
   return (
-
         <div className='container'>
             <div className='row'>
                 <h2>Top Selling</h2>
@@ -34,9 +36,9 @@ export function TopSellings() {
                                 <li>Arbeitsspeicher; DDR4 2666 - 6000 MH</li>
                                 <li>Formfaktor: ATX</li>
                             </ul>
-                            <button type='button' className='btn btn-secondary btn-sm'>Details</button>
+                            <DetailModal/>
+                            <ComparingModal/>
                             <button type='button' className='btn btn-primary btn-sm'>In den Warenkorb</button>
-                            <button type='button' className='btn btn-secondary btn-sm'>Zum Vergleich hinzufügen</button>
                         </div>
                     </div>
                 </div>
