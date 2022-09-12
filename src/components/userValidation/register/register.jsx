@@ -64,7 +64,8 @@ export const Register = () => {
                 <div className="signContainer">
                     <h2 className="dark">Sign Up</h2>
                     <form className="form" onSubmit={(e) => getUserId(e)}>
-                        <select name="userGroupe" id="" onChange={onChange}>
+                        <h5>Kundenstatus</h5>
+                        <select name="" id="" onChange={kindOfUser}>
                             <option value="null">Auswählen</option>
                             <option value="private">Privatkunde</option>
                             <option value="company">Geschäftskunde</option>
