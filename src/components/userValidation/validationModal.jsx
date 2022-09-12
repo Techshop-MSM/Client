@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import { Login } from './login/login'
-import { Register } from './register/register'
+import { useState } from "react"
+import { Nav } from "react-bootstrap"
+import { Login } from "./login/login"
+import { Register } from "./register/register"
+
 
 export const ValidationModal = () => {
     const [modalToggle, setModalToggle] = useState(true)

@@ -1,4 +1,4 @@
-import { Button, Container, Col, Row, Form, Modal, Tabs,Tab } from "react-bootstrap";
+import { Button, Container, Col, Row, Form, Modal,InputGroup } from "react-bootstrap";
 
 
 
@@ -7,15 +7,18 @@ export const FormInputs = (props) => {
     return(
         <Container>
             <Row>
-            <Col lg={4}>
-            <label htmlFor="{id}" style={{width: '200px'}}>{label}</label>
-            <input  {...inputProps} onChange={onChange}/>
-            </Col>
-                <Col lg={4}>
-            <label htmlFor="{id}" style={{width: '200px'}}>{label}</label>
-            <input  {...inputProps} onChange={onChange}/>
-            </Col>
-            </Row>
+                <Col lg={6}>
+
+
+    <Form.Label> <label htmlFor="{id}">{label}</label></Form.Label>
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="basic-addon3">
+        <input  {...inputProps} onChange={onChange}/>
+        </InputGroup.Text>
+        <Form.Control id="basic-url" aria-describedby="basic-addon3" />
+      </InputGroup>
+      </Col>
+      </Row>
         </Container>
     )
 }
