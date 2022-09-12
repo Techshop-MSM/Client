@@ -5,17 +5,17 @@ import { nav, Button, Container, Col, Row, Form, Modal, Tabs,Tab } from "react-b
 
 
 export const ValidationModal = () => {
-
     const [modalToggle, setModalToggle] = useState(true)
 
     return (
         <div>
-            <nav>
-                <div onClick={(()=> setModalToggle(!modalToggle))}>LOGIN</div>
-                <div onClick={(()=> setModalToggle(!modalToggle))}>REGISTRIEREN</div>
-            </nav>
+            <Nav>
+                <div onClick={() => setModalToggle(!modalToggle)}>LOGIN</div>
+                <div onClick={() => setModalToggle(!modalToggle)}>
+                    REGISTRIEREN
+                </div>
+            </Nav>
             {modalToggle ? <Login /> : <Register />}
         </div>
-        
     )
 }
