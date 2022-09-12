@@ -8,12 +8,11 @@ import { Shop } from './components/public/shop'
 import { Basket } from './components/public/basket'
 import { Register } from './components/userValidation/register/register'
 
-// User
+// User & Company
 import { Dashboard } from './components/user/dashboard'
 import { Profile } from './components/user/profile'
 import { Wishlist } from './components/user/wishlist'
 import { Invoices } from './components/user/invoices'
-
 
 // Support
 import { DashboardSupport } from './components/manager/support/dashboard'
@@ -36,7 +35,6 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/basket" element={<Basket />} />
-                <Route path="/vali" element={<ValidationModal />} />
 
                 {/* PROTECTED ROUTES - /user */}
                 <Route
@@ -126,7 +124,8 @@ function App() {
                 <Route
                     path="/tasks"
                     element={
-                        <PrivateRoute>TEST
+                        <PrivateRoute>
+                            TEST
                             <Tasks />
                         </PrivateRoute>
                     }

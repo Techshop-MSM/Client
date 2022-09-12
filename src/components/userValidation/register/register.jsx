@@ -11,13 +11,8 @@ export const Register = () => {
         setRegisterData({ ...registerData, [e.target.name]: e.target.value })
     }
 
-    // const [userGroupe, setUserGroupe] = useState([
-    //     {
-    //         kind: '',
-    //     },
-    // ])
-    const [userGroupe, setUserGroupe] = useState('')
-
+    const [isValidatated, setIsValidatated] = useState(false)
+    const [userGroupe, setUserGroupe] = useState('private')
     const [registerData, setRegisterData] = useState({
         mail: '',
         companyName: '',
@@ -30,6 +25,7 @@ export const Register = () => {
 
     useEffect(() => {
         console.log('regData:', registerData)
+        console.log(registerData.userGroupe)
     }, [registerData])
 
     const validatePassword = () => {
@@ -38,34 +34,42 @@ export const Register = () => {
         }
     }
 
-    const getUserId = async (e) => {
-        e.preventDefault()
-        // const isValidatated = validateData(registerData)
-        // if (isValidatated === false) return
-
-        // const result = await fetch(`${backendURL}/register`, {
-        //     method: 'POST',
-        //     headers: {
-        //         Accept: 'application/json',
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(registerData),
-        // })
-        console.log(registerData)
+    const validateData = (data) => {
+        if (data.userGroupe === 'company') {
+            data.mail && data.companyName && data.contactPerson
+                ? 'Alles ausgefüllt!'
+                : 'Ups! Da fehlt wohl noch etwas?'
+        } else {
+            data.mail && data.username
+                ? 'Alles ausgefüllt!'
+                : 'Ups! Da fehlt wohl noch etwas?'
+        }
     }
 
-    // const kindOfUser = (e) => {
-    //     setUserGroupe( e.target.value )
-    // }
+    const onSubmit = async (e) => {
+        e.preventDefault()
+        
+        if (!isValidatated) return
+
+        const result = await fetch(`${backendURL}/register`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(registerData),
+        })
+        console.log(registerData)
+    }
 
     return (
         <section>
             <article className="signArticle">
                 <div className="signContainer">
                     <h2 className="dark">Sign Up</h2>
-                    <form className="form" onSubmit={(e) => getUserId(e)}>
+                    <form className="form" onSubmit={(e) => onSubmit(e)}>
                         <h5>Kundenstatus</h5>
-                        <select name="" id="" onChange={kindOfUser}>
+                        <select name="" id="">
                             <option value="null">Auswählen</option>
                             <option value="private">Privatkunde</option>
                             <option value="company">Geschäftskunde</option>
@@ -83,11 +87,12 @@ export const Register = () => {
                                   <FormInputs
                                       key={`c_${input.id}`}
                                       {...input}
-                                      value={registerData[inputTemplate.name]}
+                                      value={registerData[companyTemplate.name]}
                                       onChange={onChange}
                                   />
                               ))}
                         <label htmlFor="">{validatePassword()}</label>
+                        <label htmlFor="">{validateData(registerData)}</label>
                         <input type="submit" value="Sign Up" />
                         <Link to="/login"></Link>
                     </form>
