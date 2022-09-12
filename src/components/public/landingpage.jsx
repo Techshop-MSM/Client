@@ -8,10 +8,12 @@ import { Footer } from './Footer'
 import { MegaMenu } from './MegaMenu'
 import { ShoppingCartPreview } from './ShoppingCartPreview'
 
+import { Navbar, Offcanvas,Nav, NavDropdown, Form, FormControl,Button} from "react-bootstrap";
+
+
 export const Home = () => {
 return (
     <>
-
     <Topmenu/>
     <ShoppingCartPreview/>
     <MegaMenu/>
