@@ -1,12 +1,12 @@
-import { Topmenu } from './Topmenu'
-import { TopCarousel } from './TopCarousel'
-import { TopSellings } from './TopSellings'
-import { TrendingProducts } from './TrendingProducts'
-import { KürlichHinzugefügt } from './KürzlichHinzugefügt'
-import { BestBewertet } from './BestBewertet'
-import { Footer } from './Footer'
-import { MegaMenu } from './MegaMenu'
-import { ShoppingCartPreview } from './ShoppingCartPreview'
+import { Topmenu } from '../reusables/parts/Topmenu'
+import { TopCarousel } from './landingpage-assets/TopCarousel'
+import { TopSellings } from './landingpage-assets/TopSellings'
+import { TrendingProducts } from './landingpage-assets/TrendingProducts'
+import { KürlichHinzugefügt } from './landingpage-assets/KürzlichHinzugefügt'
+import { BestBewertet } from './landingpage-assets/BestBewertet'
+import { Footer } from '../reusables/parts/Footer'
+import { MegaMenu } from '../reusables/parts/MegaMenu'
+import { ShoppingCartPreview } from '../reusables/parts/ShoppingCartPreview'
 
 import { Navbar, Offcanvas,Nav, NavDropdown, Form, FormControl,Button} from "react-bootstrap";
 
