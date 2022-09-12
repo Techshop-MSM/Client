@@ -13,7 +13,7 @@ export const FormInputs = (props) => {
     <Form.Label> <label htmlFor="{id}">{label}</label></Form.Label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon3">
-        <input  {...inputProps} onChange={onChange}/>
+        <input  {...inputProps} onChange={onChange} required />
         </InputGroup.Text>
         <Form.Control id="basic-url" aria-describedby="basic-addon3" />
       </InputGroup>

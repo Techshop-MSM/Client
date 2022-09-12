@@ -19,7 +19,7 @@ export function LogInModal() {
 
     return (
         <>
-            <Button className="bg-green" onClick={() => setLgShow(true)}>
+            <Button onClick={() => setLgShow(true)}>
                 LogIn / Register
             </Button>
             <Modal
@@ -34,14 +34,17 @@ export function LogInModal() {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <nav>
-                        <div onClick={() => setModalToggle(!modalToggle)}>
-                            LOGIN
-                        </div>
-                        <div onClick={() => setModalToggle(!modalToggle)}>
-                            REGISTRIEREN
-                        </div>
-                    </nav>
+                    <Container>   
+                        <Row>
+                            <Col lg={12} md={12}>
+                                <div style={{textAlign: 'center', padding: '2rem'}} onClick={() => setModalToggle(!modalToggle)}>LOGIN/REGISTER</div>
+                            </Col>
+
+                            {/* <Col lg={6} md={6}>
+                                <div onClick={() => setModalToggle(!modalToggle)}>REGISTRIEREN</div>
+                            </Col> */}
+                        </Row>
+                    </Container>
                     {modalToggle ? <Login /> : <Register />}
                 </Modal.Body>
             </Modal>
