@@ -5,6 +5,7 @@ export const inputTemplate = [
         type: 'email',
         placeholder: 'E-Mail',
         label: 'E-Mail',
+        className: 'whatever',
     },
     {
         id: 2,

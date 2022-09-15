@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
             ? localStorage.setItem('auth', token)
             : localStorage.removeItem('auth')
         user
-            ? saveInLocalStorage('user', JSON.stringify(userData))
+            ? saveInLocalStorage('user', userData)
             : deleteInLocalStorage('user')
     }, [loginToken])
 

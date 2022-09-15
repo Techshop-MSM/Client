@@ -29,10 +29,11 @@ export const Login = () => {
         })
 
         const resData = await res.json()
+        console.log(resData)
         setToken(resData.auth)
-        setUserData(resData.user)
+        setUserData(resData.userData)
         saveInLocalStorage('auth', resData.auth)
-        saveInLocalStorage('user', resData.user) //Mongo Object toObject(resData.user) und Object(resData.user) nix!!!
+        saveInLocalStorage('user', resData.userData)
 
         res.status === 200 && navigate('/dashboard', { replace: true })
     }

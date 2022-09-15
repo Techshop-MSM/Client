@@ -5,6 +5,15 @@ import { companyTemplate } from './companyTemplate'
 import { FormInputs } from './formInputs'
 import { backendURL } from '../../../App.jsx'
 import { useEffect, useState } from 'react'
+import {
+    Button,
+    Container,
+    Col,
+    Row,
+    Form,
+    Modal,
+    InputGroup,
+} from 'react-bootstrap'
 
 export const Register = () => {
     const onChange = (e) => {
@@ -14,7 +23,7 @@ export const Register = () => {
     const [isValidatated, setIsValidatated] = useState(false)
     const [registerData, setRegisterData] = useState({
         email: '',
-        companyName: '',
+        company: '',
         contactPerson: '',
         username: '',
         password: '',
@@ -33,19 +42,17 @@ export const Register = () => {
     }
 
     const validateData = (data) => {
-
-        const success = {status: true, msg: 'Alles ausgefüllt!'}
-        const fail = {status: false, msg: 'Ups! Da fehlt wohl noch etwas?'}
+        const success = { status: true, msg: 'Alles ausgefüllt!' }
+        const fail = { status: false, msg: 'Ups! Da fehlt wohl noch etwas?' }
         let vali = false
 
         if (data.userGroupe === 'company') {
-            vali = data.mail && data.companyName && data.contactPerson
-            ? success
-            : fail
+            vali =
+                data.mail && data.companyName && data.contactPerson
+                    ? success
+                    : fail
         } else {
-            vali = data.mail && data.username
-            ? success
-            : fail
+            vali = data.mail && data.username ? success : fail
         }
         setIsValidatated(vali.status)
         return vali
@@ -84,23 +91,36 @@ export const Register = () => {
                             <option value="private">Privatkunde</option>
                             <option value="company">Geschäftskunde</option>
                         </select>
-                        {registerData.userGroupe === 'private'
-                            ? inputTemplate.map((input) => (
-                                  <FormInputs
-                                      key={input.id}
-                                      {...input}
-                                      value={registerData[inputTemplate.name]}
-                                      onChange={onChange}
-                                  />
-                              ))
-                            : companyTemplate.map((input) => (
-                                  <FormInputs
-                                      key={`c_${input.id}`}
-                                      {...input}
-                                      value={registerData[companyTemplate.name]}
-                                      onChange={onChange}
-                                  />
-                              ))}
+                        <Container>
+                            <Row>
+                                {registerData.userGroupe === 'private'
+                                    ? inputTemplate.map((input) => (
+                                          <FormInputs
+                                              key={input.id}
+                                              {...input}
+                                              value={
+                                                  registerData[
+                                                      inputTemplate.name
+                                                  ]
+                                              }
+                                              onChange={onChange}
+                                          />
+                                      ))
+                                    : companyTemplate.map((input) => (
+                                          <FormInputs
+                                              key={`c_${input.id}`}
+                                              {...input}
+                                              value={
+                                                  registerData[
+                                                      companyTemplate.name
+                                                  ]
+                                              }
+                                              onChange={onChange}
+                                          />
+                                      ))}
+                            </Row>
+                        </Container>
+
                         <label>{validatePassword()}</label>
 
                         <input
