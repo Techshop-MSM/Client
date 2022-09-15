@@ -1,4 +1,3 @@
-
 import Navbar from 'react-bootstrap/Navbar'
 
 export function MegaMenu() {
