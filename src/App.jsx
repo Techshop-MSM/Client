@@ -2,18 +2,21 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { PrivateRoute } from './components/userValidation/privateRoute'
 
+// Reusables
+import { Topmenu } from './components/reusables/parts/Topmenu'
+import { MegaMenu } from './components/reusables/parts/MegaMenu'
+import { Footer } from './components/reusables/parts/Footer'
+
 // PageRoutes
 import { Home } from './components/public/landingpage'
 import { Shop } from './components/public/shop'
 import { Basket } from './components/public/basket'
-import { Register } from './components/userValidation/register/register'
 
-// User
+// User & Company
 import { Dashboard } from './components/user/dashboard'
 import { Profile } from './components/user/profile'
 import { Wishlist } from './components/user/wishlist'
 import { Invoices } from './components/user/invoices'
-
 
 // Support
 import { DashboardSupport } from './components/manager/support/dashboard'
@@ -25,18 +28,18 @@ import { CreateTask } from './components/manager/support/create-task'
 import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
-import { ValidationModal } from './components/userValidation/validationModal'
 
 export const backendURL = 'http://localhost:5500'
 
 function App() {
     return (
         <main className="App">
+            <Topmenu />
+            <MegaMenu />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/basket" element={<Basket />} />
-                <Route path="/vali" element={<ValidationModal />} />
 
                 {/* PROTECTED ROUTES - /user */}
                 <Route
@@ -126,12 +129,14 @@ function App() {
                 <Route
                     path="/tasks"
                     element={
-                        <PrivateRoute>TEST
+                        <PrivateRoute>
+                            TEST
                             <Tasks />
                         </PrivateRoute>
                     }
                 />
             </Routes>
+            <Footer />
         </main>
     )
 }

@@ -1,9 +1,11 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router'
 import { backendURL } from '../../../App'
+import { AppContext } from '../../global/useContext'
 import { saveInLocalStorage } from '../../reusables/codeSnippets/localStorage'
 
 export const Login = () => {
+    const { setToken, setUserData } = useContext(AppContext)
     const loginRef = useRef()
     const passwordRef = useRef()
     const navigate = useNavigate()
@@ -28,8 +30,10 @@ export const Login = () => {
 
         const resData = await res.json()
         console.log(resData)
-        console.log(resData.auth)
+        setToken(resData.auth)
+        setUserData(resData.userData)
         saveInLocalStorage('auth', resData.auth)
+        saveInLocalStorage('user', resData.userData)
 
         res.status === 200 && navigate('/dashboard', { replace: true })
     }
