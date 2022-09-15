@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { LogInModal } from '../../userValidation/LogInModal'
-import { ShoppingCartPreview } from '../parts/ShoppingCartPreview'
- 
-=======
 import { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -20,7 +9,6 @@ import { AppContext } from '../../global/useContext'
 import { LogInModal } from '../../userValidation/LogInModal'
 import { UserLogout } from '../../userValidation/logout/logout'
 import { ShoppingCartPreview } from './ShoppingCartPreview'
->>>>>>> 52d233e07b263caa1d980b2a3322468845cf71c9
 
 export function Topmenu() {
     const { token } = useContext(AppContext)
