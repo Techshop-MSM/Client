@@ -10,12 +10,14 @@ import {
 
 export const FormInputs = (props) => {
     const { label, onChange, id, ...inputProps } = props
+
+    const labelWidth = { width: '11rem' }
+
     return (
-        <Col lg={6} >
-          {/* style={{border: 'solid'}}> */}
+        <Col lg={6} md={6} xs={12} style={{border: 'solid'}}>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon3">
-                    <Form.Label style={{ width: '11rem' }}>
+                    <Form.Label style={labelWidth}>
                         {' '}
                         <label htmlFor="{id}">{label}</label>
                     </Form.Label>

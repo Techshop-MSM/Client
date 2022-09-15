@@ -20,6 +20,21 @@ export const Register = () => {
         setRegisterData({ ...registerData, [e.target.name]: e.target.value })
     }
 
+    // STYLES
+
+    const checkboxSettings = {
+        width: '1.3rem',
+        height: '1.3rem',
+        margin: '0.5rem',
+        verticalAlign: 'middle',
+    }
+    const labelSettings = {
+        maxWidth: '6rem',
+        height: '1.3rem',
+        verticalAlign: 'middle',
+        margin: '0 0.5rem 0.1rem 0',
+    }
+
     const [isValidatated, setIsValidatated] = useState(false)
     const [registerData, setRegisterData] = useState({
         email: '',
@@ -86,8 +101,20 @@ export const Register = () => {
                     <h2>Sign Up</h2>
                     <form onSubmit={(e) => onSubmit(e)}>
                         <h5>Kundenstatus</h5>
-                        <select name="userGroupe" id="" onChange={onChange}>
-                            <option value="null">Auswählen</option>
+                        <select
+                            name="userGroupe"
+                            id=""
+                            onChange={onChange}
+                            placeholder="Rolle"
+                            style={{
+                                fontSize: '1.2rem',
+                                margin: '1rem',
+                                padding: '0.5rem 1rem',
+                            }}
+                        >
+                            <option value="null" disabled selected hidden>
+                                Auswählen
+                            </option>
                             <option value="private">Privatkunde</option>
                             <option value="company">Geschäftskunde</option>
                         </select>
@@ -128,8 +155,13 @@ export const Register = () => {
                             name="Newsletter"
                             id="nl"
                             value="Newsletter"
+                            style={checkboxSettings}
                         />
-                        <label className="form-check-label" htmlFor="nl">
+                        <label
+                            className="form-check-label"
+                            htmlFor="nl"
+                            style={labelSettings}
+                        >
                             Newsletter
                         </label>
 
@@ -138,8 +170,13 @@ export const Register = () => {
                             name="AGB"
                             id="agb"
                             value="AGB"
+                            style={checkboxSettings}
                         />
-                        <label className="form-check-label" htmlFor="agb">
+                        <label
+                            className="form-check-label"
+                            htmlFor="agb"
+                            style={labelSettings}
+                        >
                             AGB
                         </label>
 
@@ -148,11 +185,25 @@ export const Register = () => {
                             name="Datenschutz"
                             id="ds"
                             value="Datenschutz"
+                            style={checkboxSettings}
                         />
-                        <label className="form-check-label" htmlFor="ds">
+                        <label
+                            className="form-check-label"
+                            htmlFor="ds"
+                            style={labelSettings}
+                        >
                             Datenschutz
                         </label>
-                        <input type="submit" value="Sign Up" />
+                        <input
+                            type="submit"
+                            value="Sign Up"
+                            style={{
+                                padding: '0.25rem 1rem',
+                                fontSize: '1rem',
+                                fontWeight: 'bold',
+                                marginLeft: '2rem',
+                            }}
+                        />
                         <Link to="/login"></Link>
                     </form>
                 </div>

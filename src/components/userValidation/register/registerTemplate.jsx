@@ -25,7 +25,7 @@ export const inputTemplate = [
         id: 4,
         name: 'confirmPassword',
         type: 'text',
-        placeholder: 'Confirm Password',
-        label: 'Confirm Password',
+        placeholder: 'Repeat Password',
+        label: 'Repeat Password',
     },
 ]

@@ -26,33 +26,32 @@ export function LogInModal() {
             ) : (
                 <div>
                     <Button onClick={() => setLgShow(true)}>
-                        LogIn / Register
+                        Sign
                     </Button>
                     <Modal
                         size="xl"
                         show={lgShow}
                         onHide={() => setLgShow(false)}
-                        aria-labelledby="example-modal-sizes-title-lg"
+                        aria-labelledby="example-modal-sizes-title-xl"
                     >
                         <Modal.Header closeButton className="color-green">
-                            <Modal.Title id="example-modal-sizes-title-lg">
+                            <Modal.Title id="example-modal-sizes-title-xl">
                                 Kontakt
                             </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Container>
                                 <Row>
-                                    <Col lg={12} md={12}>
+                                    <Col xl={12} lg={12} md={12}>
                                         <div
                                             style={{
-                                                textAlign: 'center',
+                                                textAlign: 'right',
                                                 padding: '2rem',
                                             }}
-                                            onClick={() =>
-                                                setModalToggle(!modalToggle)
-                                            }
                                         >
-                                            LOGIN/REGISTER
+                                            <button onClick={() =>
+                                                setModalToggle(!modalToggle)
+                                            } style={{padding: '0.5rem 1.5rem', fontSize: '1.2rem', fontWeight: 'bold'}}>{modalToggle ? 'SignIn' : 'SignUp'}</button>
                                         </div>
                                     </Col>
 
