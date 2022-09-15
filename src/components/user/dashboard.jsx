@@ -1,10 +1,26 @@
-import { Logout } from '../userValidation/logout/logout'
+import { useContext } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import { AppContext } from '../global/useContext'
+import { CompanyDashboard } from './dashboards/companyDashboard'
+import { PrivateDashboard } from './dashboards/privateDashboard'
 
 export const Dashboard = () => {
+    const { userData } = useContext(AppContext)
+
     return (
-        // Kannst du löschen, ist nur für den Login/Logout-Test
-        <form onSubmit={Logout}>
-            <input type="submit" value="Logout" />
-        </form>
+        <>
+            {/* "privat" Customer Dashboard */}
+            {userData.group === 'private' && (
+                <Container>
+                    <PrivateDashboard />
+                </Container>
+            )}
+            {/* "company" Customer Dashboard */}
+            {userData.group === 'company' && (
+                <Container>
+                    <CompanyDashboard />
+                </Container>
+            )}
+        </>
     )
 }

@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { ComparingModal } from '../ComparingModal';
-import { DetailModal } from './DetailModal';
+import { ComparingModal } from '../../reusables/parts/ComparingModal';
+import { DetailModal } from '../../reusables/parts/DetailModal';
 
 
 export function TopSellings() {
