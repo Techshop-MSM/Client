@@ -111,11 +111,11 @@ function App() {
 
                 {/* PROTECTED ROUTES - /manger/admin */}
                 <Route
-                    path="/dashboard"
+                    path="/DashboardAdmin"
                     element={
-                        <PrivateRoute>
+                        //<PrivateRoute>
                             <DashboardAdmin />
-                        </PrivateRoute>
+                        //</PrivateRoute>
                     }
                 />
                 <Route
