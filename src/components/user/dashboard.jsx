@@ -4,6 +4,7 @@ import { AppContext } from '../global/useContext'
 import { CompanyDashboard } from './dashboards/companyDashboard'
 import { PrivateDashboard } from './dashboards/privateDashboard'
 
+
 export const Dashboard = () => {
     const { userData } = useContext(AppContext)
 
