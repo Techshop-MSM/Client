@@ -24,7 +24,7 @@ import { Chat } from './components/manager/support/chat'
 import { Tickets } from './components/manager/support/tickets'
 import { CreateTask } from './components/manager/support/create-task'
 
-// Admin
+// // Admin
 import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
@@ -114,7 +114,7 @@ function App() {
                     path="/DashboardAdmin"
                     element={
                         //<PrivateRoute>
-                            <DashboardAdmin />
+                        <DashboardAdmin />
                         //</PrivateRoute>
                     }
                 />

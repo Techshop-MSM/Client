@@ -1,3 +1,5 @@
+  /*RATING-STARS*/
+    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -369,14 +371,11 @@
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
+}
 
-
-    /*RATING-STARS*/
-    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+.card-registration .select-arrow {
+  top: 13px;
+}
 
 
 .cont{
