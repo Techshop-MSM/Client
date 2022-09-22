@@ -15,8 +15,6 @@ export const DashboardAdmin = () => {
   }, [file, jsonData])
 
   function logFile(e) {
-    // setString(e.target.result)
-    // setJsonData(...jsonData, JSON.parse(string))
     setJsonData(JSON.parse(e.target.result))
   }
 
@@ -72,6 +70,7 @@ export const DashboardAdmin = () => {
       },
       body: JSON.stringify(upload),
     })
+    result && location.reload()
   }
 
   return (
@@ -104,13 +103,14 @@ export const DashboardAdmin = () => {
             <h3>Incomming data</h3>
             <select name="" id="" onChange={cat} style={{ width: '40%', padding: '0.2rem 0.5rem' }}>
               <option>Kategorie wählen...</option>
+              <option value="case">Gehäuse</option>
               <option value="cpu">CPU</option>
-              <option value="storage">HDD/SSD Festplatte</option>
               <option value="gpu">Grafikkarte</option>
               <option value="mainboard">Mainboard</option>
-              <option value="case">Gehäuse</option>
               <option value="power">Netzteil</option>
               <option value="ram">Arbeitsspeicher</option>
+              <option value="storage">HDD/SSD Festplatte</option>
+              <option value="sound">Soundkarte</option>
             </select>
             <img
               src="../../../../public/images/add.svg"
@@ -208,7 +208,7 @@ export const DashboardAdmin = () => {
                 <option value="storage">HDD Festplatte</option>
                 <option value="gpu">Grafikkarte</option>
                 <option value="mainboard">Mainboard</option>
-                <option value="case">Gehäuse</option>/option>
+                <option value="case">Gehäuse</option>
                 <option value="power">Netzteil</option>
                 <option value="ram">Arbeitsspeicher</option>
               </select>
