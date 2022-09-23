@@ -9,10 +9,11 @@ export const DashboardAdmin = () => {
   const [file, setFile] = useState(null)
   const [jsonData, setJsonData] = useState(null)
   const [category, setCategory] = useState(null)
+  const [dataFromDB, setDataFromDB] = useState(null)
 
   useEffect(() => {
     jsonData && console.log('json', jsonData)
-  }, [file, jsonData])
+  }, [file, jsonData, dataFromDB])
 
   function logFile(e) {
     setJsonData(JSON.parse(e.target.result))
@@ -38,10 +39,10 @@ export const DashboardAdmin = () => {
 
   // ------------------ loadData -------------
 
-  const loadData = () => {
-    const test = 'cat'
-    return `${test}: Test`
+  const loadData = (cat) => {
+    return dataFromDB
   }
+  console.log('loadData', loadData())
 
   const cat = (e) => {
     setCategory(e.target.value)
@@ -53,6 +54,10 @@ export const DashboardAdmin = () => {
     // if (userData.group != admin) {
     //   return
     // }
+
+    reason === 'clear' && setDataFromDB('load new Category...')
+
+    // Upload Data to DB
     const upload = {
       reason: reason,
       category: category,
@@ -62,7 +67,7 @@ export const DashboardAdmin = () => {
 
     console.log(upload)
 
-    const result = await fetch(`${backendURL}/updateDatabase`, {
+    const res = await fetch(`${backendURL}/updateDatabase`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -70,7 +75,13 @@ export const DashboardAdmin = () => {
       },
       body: JSON.stringify(upload),
     })
-    result && location.reload()
+    const result = await res.json()
+
+    console.log(result)
+    setDataFromDB(result)
+    // if(result.status != 201){ //upload: 200 load: 201
+    //   result && location.reload()
+    // }
   }
 
   return (
@@ -107,10 +118,10 @@ export const DashboardAdmin = () => {
               <option value="cpu">CPU</option>
               <option value="gpu">Grafikkarte</option>
               <option value="mainboard">Mainboard</option>
-              <option value="power">Netzteil</option>
+              <option value="powerAdapter">Netzteil</option>
               <option value="ram">Arbeitsspeicher</option>
               <option value="storage">HDD/SSD Festplatte</option>
-              <option value="sound">Soundkarte</option>
+              <option value="soundCard">Soundkarte</option>
             </select>
             <img
               src="../../../../public/images/add.svg"
@@ -202,19 +213,78 @@ export const DashboardAdmin = () => {
           <div style={{ minHeight: '10rem' }}>
             <div style={{ borderBottom: 'solid', textAlign: 'center' }}>
               <h3>Database</h3>
-              <select name="" id="" onChange={cat}>
-                <option>Wähle eine Kategorie...</option>
+              <select
+                name=""
+                id=""
+                onChange={cat}
+                style={{ width: '40%', padding: '0.2rem 0.5rem' }}
+              >
+                <option>Kategorie wählen...</option>
+                <option value="case">Gehäuse</option>
                 <option value="cpu">CPU</option>
-                <option value="storage">HDD Festplatte</option>
                 <option value="gpu">Grafikkarte</option>
                 <option value="mainboard">Mainboard</option>
-                <option value="case">Gehäuse</option>
-                <option value="power">Netzteil</option>
+                <option value="powerAdapter">Netzteil</option>
                 <option value="ram">Arbeitsspeicher</option>
+                <option value="storage">HDD/SSD Festplatte</option>
+                <option value="soundCard">Soundkarte</option>
               </select>
+              <img
+                src="../../../../public/images/load.svg"
+                alt=""
+                onClick={() => DatabaseManager('load')}
+                style={{
+                  width: '2rem',
+                  margin: '0.5rem 0.5rem 0.5rem 2rem',
+                  padding: '0.2rem 0.3rem',
+                  borderRadius: '0.5rem',
+                  border: 'solid 0.1rem',
+                }}
+              />
+              <img
+                src="../../../../public/images/clear.svg"
+                alt=""
+                onClick={() => DatabaseManager('clear')}
+                style={{
+                  width: '2rem',
+                  margin: '0.5rem 0.5rem 0.5rem 2rem',
+                }}
+              />
             </div>
           </div>
-          <div style={{ minHeight: '10rem', border: 'solid' }}>{loadData('Mainboard')}</div>
+
+          {dataFromDB ? (
+              dataFromDB.map((article, index) => (
+                <tbody key={index} style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
+                  <tr>
+                    {/* {Object.values(article).map((field, i) => (
+                      <td name="an">{field}</td>
+                    )) */}
+                    
+                    }
+                    <td>
+                      <img
+                        src="../../../../public/images/delete.svg"
+                        alt=""
+                        onClick={() => DatabaseManager('delete')}
+                        style={{
+                          width: '1.5rem',
+                          margin: '0.5rem 0.5rem 0.5rem 2rem',
+                          padding: '0.1rem 0.1rem',
+                          borderRadius: '0.5rem',
+                        }}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              ))
+            ) : (
+              <tbody>
+                <tr>
+                  <td style={{ textAlign: 'center', padding: '2rem' }}>Load Category ...</td>
+                </tr>
+              </tbody>
+            )}
         </Col>
       </Row>
     </Container>
