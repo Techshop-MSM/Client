@@ -4,8 +4,8 @@ export function CableFilter() {
   return (
     <>
     <Container fluid>
-        <Row>
-            <Accordion defaultActiveKey={['1']} alwaysOpen>
+      <Row>
+      <Accordion defaultActiveKey={['1']} alwaysOpen style={{paddingLeft: '0', paddingRight: '0'}}>
       <Accordion.Item eventKey="">
         <Accordion.Header>Filter</Accordion.Header>
         <Accordion.Body>

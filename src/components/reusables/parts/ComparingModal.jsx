@@ -6,7 +6,7 @@ export function ComparingModal() {
   return (
 
     <>
-      <Button className="bg-green" onClick={() => setLgShow(true)}>Vergleichen </Button>
+      <Button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)}>Vergleichen </Button>
       <Modal
         size="xl"
         show={lgShow}
