@@ -1,11 +1,11 @@
-import {ScreenFilter } from '../productFilter/ScreenFilter'
+import {CpuFilter } from '../productFilter/CpuFilter'
 
 
-export function Mainboards() {
+export function CPU() {
   return (
     <>
         <div className="container">
-        <ScreenFilter/>
+        <CpuFilter/>
             <div className="row">
             <div className="col-lg-3" style={{minHeight: '600px', marginBottom: '30px'}}>                    <div className="cardcontainer">
                         <div className="photo">
@@ -129,7 +129,7 @@ export function Mainboards() {
                             <button type="button" className="btn btn-secondary btn-sm">Zum Vergleich hinzufügen</button>
                         </div>
                     </div>
-                </div>               
+                </div>                
                 <div className="col-lg-3" style={{minHeight: '600px', marginBottom: '30px'}}>                    <div className="cardcontainer">
                         <div className="photo">
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -156,7 +156,7 @@ export function Mainboards() {
                             <button type="button" className="btn btn-secondary btn-sm">Zum Vergleich hinzufügen</button>
                         </div>
                     </div>
-                </div>               
+                </div>                
                 <div className="col-lg-3" style={{minHeight: '600px', marginBottom: '30px'}}>                    <div className="cardcontainer">
                         <div className="photo">
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>

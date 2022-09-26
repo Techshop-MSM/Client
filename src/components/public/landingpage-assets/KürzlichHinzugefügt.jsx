@@ -8,12 +8,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 export function KürlichHinzugefügt() {
   return (
 
-        <div className='container'>
+        <div className='container' style={{marginTop: '30px'}}>
             <div className='row'>
-                <h2>Kürzlich Hinzugefügt</h2>
+                <h2 style={{textAlign: 'center'}} className='topunderline'>Kürzlich Hinzugefügt</h2>
                 <hr/>
                 <div className='col-lg-3' style={{minHeight: '600px'}}>
-                    <div className='cardcontainer'>
+                <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
                             <div className='preview-badge'>Eins</div>
@@ -41,7 +41,7 @@ export function KürlichHinzugefügt() {
                     </div>
                 </div>
                 <div className='col-lg-3' style={{minHeight: '600px'}}>
-                    <div className='cardcontainer'>
+                <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                         <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
                             <div className='preview-badge'>Zwei</div>
@@ -65,7 +65,7 @@ export function KürlichHinzugefügt() {
                     </div>
                 </div>
                 <div className='col-lg-3' style={{minHeight: '600px'}}>
-                    <div className='cardcontainer'>
+                <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                         <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
                             <div className='preview-badge'>Drei</div>
@@ -89,7 +89,7 @@ export function KürlichHinzugefügt() {
                     </div>
                 </div>
                 <div className='col-lg-3' style={{minHeight: '600px'}}>
-                    <div className='cardcontainer'>
+                <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                         <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
                             <div className='preview-badge'>Vier</div>
