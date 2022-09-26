@@ -11,11 +11,7 @@ import { ShoppingCartPreview } from '../parts/ShoppingCartPreview'
 export function Topmenu() {
   return (
     <>
-<<<<<<< HEAD
     <Navbar bg='dark' expand='lg'>
-=======
-    <Navbar bg='light' expand='lg'>
->>>>>>> dev
       <Container fluid>
         <Navbar.Brand href='#'>Navbar scroll</Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
