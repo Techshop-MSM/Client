@@ -24,7 +24,7 @@ import { Chat } from './components/manager/support/chat'
 import { Tickets } from './components/manager/support/tickets'
 import { CreateTask } from './components/manager/support/create-task'
 
-// Admin
+// // Admin
 import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
@@ -45,9 +45,9 @@ function App() {
                 <Route
                     path="/dashboard"
                     element={
-                        <PrivateRoute>
+                        //<PrivateRoute>
                             <Dashboard />
-                        </PrivateRoute>
+                        //</PrivateRoute>
                     }
                 />
                 <Route
@@ -111,11 +111,11 @@ function App() {
 
                 {/* PROTECTED ROUTES - /manger/admin */}
                 <Route
-                    path="/dashboard"
+                    path="/DashboardAdmin"
                     element={
-                        <PrivateRoute>
-                            <DashboardAdmin />
-                        </PrivateRoute>
+                        //<PrivateRoute>
+                        <DashboardAdmin />
+                        //</PrivateRoute>
                     }
                 />
                 <Route

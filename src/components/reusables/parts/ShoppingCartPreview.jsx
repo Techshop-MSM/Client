@@ -10,7 +10,7 @@ export function ShoppingCartPreview() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} style={{margin: '0 2rem'}}>
+            <Button variant="primary" onClick={handleShow}>
                 Warenkorb
             </Button>
 

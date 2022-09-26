@@ -1,104 +1,100 @@
 import { Container,Row, Col, Accordion, Form } from 'react-bootstrap';
 
-export function SoundCardsFilter() {
+export function Netzteile() {
   return (
     <>
     <Container fluid>
         <Row>
-<<<<<<< HEAD
-            <Accordion defaultActiveKey={['1']} alwaysOpen style={{paddingLeft: '0', paddingRight: '0'}}>
-=======
             <Accordion defaultActiveKey={['1']} alwaysOpen>
->>>>>>> dev
       <Accordion.Item eventKey="">
         <Accordion.Header>Filter</Accordion.Header>
         <Accordion.Body>
             <Col lg={2} style={{display: 'inline-block', zIndex: '40000000'}} >
         <Accordion.Item eventKey="2">
-        <Accordion.Header>Hersteller</Accordion.Header>
+        <Accordion.Header></Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">ASUS</option>
-      <option value="2">Silverstone</option>
-      <option value="3">Creative</option>
-      <option value="4">AXAGON</option>
-      <option value="5">EPOS</option>
-      <option value="6">SteelSeries</option>
+      <option>Hersteller</option>
+      <option value="1">Corsair</option>
+      <option value="2">Akasa</option>
+      <option value="3">ASUS</option>
+      <option value="4">be quiet!</option>
+      <option value="5">EVGA</option>
+      <option value="6">Lian</option>
+      <option value="7">Thermaltake</option>
+      <option value="8">Zalman</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
       </Col>
       <Col lg={2} style={{display: 'inline-block'}}>
         <Accordion.Item eventKey="3">
-        <Accordion.Header>Anschluss</Accordion.Header>
+        <Accordion.Header>Formfaktor</Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">3,5 mm Klinke</option>
-      <option value="2">6,3 mm Klinke</option>
-      <option value="3">USB</option>
-      <option value="4">USB Typ C</option>
-      <option value="5">Mini-USB</option>
-      <option value="6">Micro-USB</option>
-      <option value="7">Optisch</option>
-      <option value="8">PCIe</option>
+      <option value="1">Micro-ATX</option>
+      <option value="2">Mini-ATX</option>
+      <option value="3">ATX</option>
+      <option value="4">Extended-ATX</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
       </Col>            
         <Col lg={2} style={{display: 'inline-block'}}>
         <Accordion.Item eventKey="4">
-        <Accordion.Header>Kanäle</Accordion.Header>
+        <Accordion.Header>Watt</Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">Max 2 </option>
-      <option value="2">Max 6</option>
-      <option value="3">Max 8</option>
+      <option value="1">bis 500 Watt</option>
+      <option value="2">bis 800 Watt</option>
+      <option value="3">über 800 Watt</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
       </Col>            
       <Col lg={2} style={{display: 'inline-block'}}>
         <Accordion.Item eventKey="5">
-        <Accordion.Header>max. Wiedergabequalität
+        <Accordion.Header>Modular
         </Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">48KHz / 16 bit</option>
-      <option value="2">95KHz / 24 bit</option>
-      <option value="3">192KHz / 24 bit</option>
-      <option value="1">384KHz / 32 bit</option>
-      <option value="2">Thunderbold</option>
-      <option value="3">USB</option>
-      <option value="1">Mini- Displayport</option>
+      <option value="1">Ja</option>
+      <option value="2">Nein</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
       </Col>            
       <Col lg={2} style={{display: 'inline-block'}}>
         <Accordion.Item eventKey="6">
-        <Accordion.Header>Standard / Späzifikation</Accordion.Header>
+        <Accordion.Header>Effizienz</Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">USB 2.0</option>
-      <option value="2">USB 3.0</option>
-      <option value="3">PCIe</option>
+      <option value="1">80 Plus</option>
+      <option value="2">80 Plus Bronze</option>
+      <option value="3">80 Plus Gold</option>
+      <option value="4">80 Plus Platinum</option>
+      <option value="5">80 Plus Titanium</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
-      </Col>    
+      </Col>            
       <Col lg={2} style={{display: 'inline-block'}}>
-        <Accordion.Item eventKey="6">
-        <Accordion.Header>Stromversorgung</Accordion.Header>
+        <Accordion.Item eventKey="7">
+        <Accordion.Header>Netzteil Format</Accordion.Header>
         <Accordion.Body>
         <Form.Select aria-label="Default select example">
-      <option value="1">Kein PCIe Stromkabel</option>
-      <option value="2">Micro.USB</option>
-      <option value="3">1* 6-Pin PCIe</option>
-      <option value="4">USB</option>
+      <option value="1">ATX</option>
+      <option value="2">ITX</option>
+      <option value="3">SFX-L</option>
+      <option value="4">SFX</option>
+      <option value="5">Flex-ATX</option>
+      <option value="6">TFX</option>
+      <option value="7">Extern</option>
+      <option value="8">Sonstige</option>
     </Form.Select>
         </Accordion.Body>
       </Accordion.Item>
-      </Col>                           
+      </Col>                    
       <Col lg={12} >
       <h6 className='pt-3'>Wähle mindestens 1 Element aus</h6>
       </Col>
@@ -110,3 +106,6 @@ export function SoundCardsFilter() {
     </>
   );
 }
+
+
+

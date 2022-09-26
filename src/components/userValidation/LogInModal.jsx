@@ -26,7 +26,7 @@ export function LogInModal() {
             ) : (
                 <div>
                     <Button onClick={() => setLgShow(true)}>
-                        Sign
+                        Sign In
                     </Button>
                     <Modal
                         size="xl"
@@ -51,7 +51,7 @@ export function LogInModal() {
                                         >
                                             <button onClick={() =>
                                                 setModalToggle(!modalToggle)
-                                            } style={{padding: '0.5rem 1.5rem', fontSize: '1.2rem', fontWeight: 'bold'}}>{modalToggle ? 'SignIn' : 'SignUp'}</button>
+                                            } style={{padding: '0.5rem 1.5rem', fontSize: '1.2rem', fontWeight: 'bold'}}>{modalToggle ? 'Sign Up' : 'Sign In'}</button>
                                         </div>
                                     </Col>
 

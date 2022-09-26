@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 body{
   color: #fff
 }
  
+=======
+  /*RATING-STARS*/
+    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+>>>>>>> dev
 
  /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -377,6 +382,7 @@ body{
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
+<<<<<<< HEAD
     }
     .card-registration .select-arrow {
     top: 13px;
@@ -385,6 +391,13 @@ body{
 
     /*RATING-STARS*/
     @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+=======
+}
+
+.card-registration .select-arrow {
+  top: 13px;
+}
+>>>>>>> dev
 
 
 .cont{
@@ -487,6 +500,7 @@ input.star:checked ~ .rev-box{
   height: 125px;
   overflow: visible;
 }
+<<<<<<< HEAD
 
 
 .testbtn{
@@ -4649,3 +4663,5 @@ text-decoration-skip: spaces;		/** Safari **/
 text-decoration-skip-ink: spaces;
 line-height: 80px;
 }
+=======
+>>>>>>> dev
