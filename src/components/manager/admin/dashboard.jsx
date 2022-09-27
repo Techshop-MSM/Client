@@ -5,15 +5,29 @@ import { backendURL } from '../../../App'
 
 export const DashboardAdmin = () => {
   const { userData } = useContext(AppContext)
-
   const [file, setFile] = useState(null)
   const [jsonData, setJsonData] = useState(null)
   const [category, setCategory] = useState(null)
-  const [dataFromDB, setDataFromDB] = useState(null)
+  const [articles, setArticles] = useState(null)
+
+  const buttonStyle = {
+    width: '2rem',
+    margin: '0.5rem 0.5rem 0.5rem 2rem',
+    padding: '0.2rem 0.3rem',
+    borderRadius: '0.5rem',
+    border: 'solid 0.1rem',
+  }
+
+  const deleteButton = {
+    width: '1.5rem',
+    margin: '0.5rem 0.5rem 0.5rem 2rem',
+    padding: '0.1rem 0.1rem',
+    borderRadius: '0.5rem',
+  }
 
   useEffect(() => {
     jsonData && console.log('json', jsonData)
-  }, [file, jsonData, dataFromDB])
+  }, [file, jsonData, articles])
 
   function logFile(e) {
     setJsonData(JSON.parse(e.target.result))
@@ -25,7 +39,6 @@ export const DashboardAdmin = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-
     const reader = new FileReader()
 
     //Setup the callback event to run when the file is read
@@ -34,19 +47,19 @@ export const DashboardAdmin = () => {
     }
     reader.onloadend = logFile
     reader.readAsText(file)
-    // const reader = new FormData() // to backend
   }
 
-  // ------------------ loadData -------------
+  // ------------------ load- and convertData -------------
 
-  const loadData = (cat) => {
-    return dataFromDB
+  const convertData = () => {
+    const newData = Object.keys(articles.baseData).forEach(function (key, i) {
+      console.log(key)
+    })
+    console.log('convert', newData)
   }
-  console.log('loadData', loadData())
 
   const cat = (e) => {
     setCategory(e.target.value)
-    console.log('categoryState:', category, 'e.target.value:', e.target.value)
     return cat
   }
 
@@ -55,7 +68,7 @@ export const DashboardAdmin = () => {
     //   return
     // }
 
-    reason === 'clear' && setDataFromDB('load new Category...')
+    reason === 'clear' && setArticles('load new Category...')
 
     // Upload Data to DB
     const upload = {
@@ -65,8 +78,6 @@ export const DashboardAdmin = () => {
       data: jsonData,
     }
 
-    console.log(upload)
-
     const res = await fetch(`${backendURL}/updateDatabase`, {
       method: 'POST',
       headers: {
@@ -75,13 +86,27 @@ export const DashboardAdmin = () => {
       },
       body: JSON.stringify(upload),
     })
-    const result = await res.json()
+    const rawArticles = await res.json()
+    console.log('rawArticles', rawArticles)
+    // const articles = await restuctArticleData(rawArticles)
+    // console.log(articles)
+    setArticles(rawArticles)
+  }
 
-    console.log(result)
-    setDataFromDB(result)
-    // if(result.status != 201){ //upload: 200 load: 201
-    //   result && location.reload()
-    // }
+  const selectField = () => {
+    return (
+      <select name="" id="" onChange={cat} style={{ width: '40%', padding: '0.2rem 0.5rem' }}>
+        <option>Kategorie wählen...</option>
+        <option value="case">Gehäuse</option>
+        <option value="cpu">CPU</option>
+        <option value="gpu">Grafikkarte</option>
+        <option value="mainboard">Mainboard</option>
+        <option value="powerAdapter">Netzteil</option>
+        <option value="ram">Arbeitsspeicher</option>
+        <option value="storage">HDD/SSD Festplatte</option>
+        <option value="soundCard">Soundkarte</option>
+      </select>
+    )
   }
 
   return (
@@ -94,7 +119,6 @@ export const DashboardAdmin = () => {
               id="file"
               onChange={detectFile}
               accept=".json"
-              multiple=""
               style={{
                 width: '60%',
                 padding: '0.2rem',
@@ -112,52 +136,24 @@ export const DashboardAdmin = () => {
           </form>
           <div style={{ textAlign: 'center' }}>
             <h3>Incomming data</h3>
-            <select name="" id="" onChange={cat} style={{ width: '40%', padding: '0.2rem 0.5rem' }}>
-              <option>Kategorie wählen...</option>
-              <option value="case">Gehäuse</option>
-              <option value="cpu">CPU</option>
-              <option value="gpu">Grafikkarte</option>
-              <option value="mainboard">Mainboard</option>
-              <option value="powerAdapter">Netzteil</option>
-              <option value="ram">Arbeitsspeicher</option>
-              <option value="storage">HDD/SSD Festplatte</option>
-              <option value="soundCard">Soundkarte</option>
-            </select>
+            {selectField()}
             <img
               src="../../../../public/images/add.svg"
               alt=""
               onClick={() => DatabaseManager('add')}
-              style={{
-                width: '2rem',
-                margin: '0.5rem 0.5rem 0.5rem 2rem',
-                padding: '0.2rem 0.3rem',
-                borderRadius: '0.5rem',
-                border: 'solid 0.1rem',
-              }}
+              style={buttonStyle}
             />
             <img
               src="../../../../public/images/edit.svg"
               alt=""
               onClick={() => DatabaseManager('edit')}
-              style={{
-                width: '2rem',
-                margin: '0.5rem',
-                padding: '0.2rem 0.3rem',
-                borderRadius: '0.5rem',
-                border: 'solid 0.1rem',
-              }}
+              style={buttonStyle}
             />
             <img
               src="../../../../public/images/upload.svg"
               alt=""
               onClick={() => DatabaseManager('upload')}
-              style={{
-                width: '2rem',
-                margin: '0.5rem',
-                padding: '0.2rem 0.3rem',
-                borderRadius: '0.5rem',
-                border: 'solid 0.1rem',
-              }}
+              style={buttonStyle}
             />
           </div>
           <table style={{ width: '100%', padding: '1.5rem', border: 'solid 0.1rem' }}>
@@ -191,12 +187,7 @@ export const DashboardAdmin = () => {
                         src="../../../../public/images/delete.svg"
                         alt=""
                         onClick={() => DatabaseManager('delete')}
-                        style={{
-                          width: '1.5rem',
-                          margin: '0.5rem 0.5rem 0.5rem 2rem',
-                          padding: '0.1rem 0.1rem',
-                          borderRadius: '0.5rem',
-                        }}
+                        style={deleteButton}
                       />
                     </td>
                   </tr>
@@ -213,66 +204,67 @@ export const DashboardAdmin = () => {
           <div style={{ minHeight: '10rem' }}>
             <div style={{ borderBottom: 'solid', textAlign: 'center' }}>
               <h3>Database</h3>
-              <select
-                name=""
-                id=""
-                onChange={cat}
-                style={{ width: '40%', padding: '0.2rem 0.5rem' }}
-              >
-                <option>Kategorie wählen...</option>
-                <option value="case">Gehäuse</option>
-                <option value="cpu">CPU</option>
-                <option value="gpu">Grafikkarte</option>
-                <option value="mainboard">Mainboard</option>
-                <option value="powerAdapter">Netzteil</option>
-                <option value="ram">Arbeitsspeicher</option>
-                <option value="storage">HDD/SSD Festplatte</option>
-                <option value="soundCard">Soundkarte</option>
-              </select>
+              {selectField()}
               <img
                 src="../../../../public/images/load.svg"
                 alt=""
                 onClick={() => DatabaseManager('load')}
-                style={{
-                  width: '2rem',
-                  margin: '0.5rem 0.5rem 0.5rem 2rem',
-                  padding: '0.2rem 0.3rem',
-                  borderRadius: '0.5rem',
-                  border: 'solid 0.1rem',
-                }}
+                style={buttonStyle}
               />
               <img
                 src="../../../../public/images/clear.svg"
                 alt=""
                 onClick={() => DatabaseManager('clear')}
-                style={{
-                  width: '2rem',
-                  margin: '0.5rem 0.5rem 0.5rem 2rem',
-                }}
+                style={buttonStyle}
               />
             </div>
           </div>
-
-          {dataFromDB ? (
-              dataFromDB.map((article, index) => (
+          <table style={{ width: '100%', padding: '1.5rem', border: 'solid 0.1rem' }}>
+            <thead>
+              {articles && (
+                <tr>
+                  {articles.map((article, i) =>
+                    Object.keys(article).map((field, i) =>
+                      ({ field } === 'baseData' ? (
+                        Object.keys(field).map((innerField) => (
+                          <td name="an" style={{ border: 'solid' }} key={i}>
+                            {innerField}
+                          </td>
+                        ))
+                      ) : (
+                        <td name="an" style={{ border: 'solid' }} key={i}>
+                          {field}
+                        </td>
+                      ))
+                    )
+                  )}
+                </tr>
+              )}
+            </thead>
+            {articles ? (
+              articles.map((article, index) => (
                 <tbody key={index} style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
                   <tr>
-                    {/* {Object.values(article).map((field, i) => (
-                      <td name="an">{field}</td>
-                    )) */}
-                    
-                    }
+                    {Object.entries(article).map((entry, i) =>
+                      entry[0] === 'baseData' ? (
+                        Object.entries(entry).map((innerEntry) => (
+                          <td name="an" key={i}>
+                            {innerEntry[1]}
+                          </td>
+                        ))
+                      ) : (
+                        <td name="an" key={i}>
+                          {entry[1]}
+                        </td>
+                      )
+                    )}
+                    {/* Object.entries(entry).map((innerEntry) => innerEntry[1]) */}
                     <td>
                       <img
                         src="../../../../public/images/delete.svg"
                         alt=""
                         onClick={() => DatabaseManager('delete')}
-                        style={{
-                          width: '1.5rem',
-                          margin: '0.5rem 0.5rem 0.5rem 2rem',
-                          padding: '0.1rem 0.1rem',
-                          borderRadius: '0.5rem',
-                        }}
+                        style={deleteButton}
                       />
                     </td>
                   </tr>
@@ -285,6 +277,7 @@ export const DashboardAdmin = () => {
                 </tr>
               </tbody>
             )}
+          </table>
         </Col>
       </Row>
     </Container>
