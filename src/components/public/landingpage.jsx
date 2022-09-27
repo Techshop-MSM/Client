@@ -3,6 +3,7 @@ import { TopSellings } from './landingpage-assets/TopSellings'
 import { TrendingProducts } from './landingpage-assets/TrendingProducts'
 import { KürlichHinzugefügt } from './landingpage-assets/KürzlichHinzugefügt'
 import { BestBewertet } from './landingpage-assets/BestBewertet'
+import { Cable } from './ArticlePages/Cable'
 
 
 
