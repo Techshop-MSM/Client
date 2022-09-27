@@ -7,7 +7,7 @@ import {
 
 export const AppContext = createContext()
 
-//LOAD loginToken, userData and sideSettings
+//LOAD loginToken and userData
 const loginToken = getFromLocalStorage('auth')
 const user = localStorage.getItem('user')
 

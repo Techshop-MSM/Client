@@ -32,113 +32,113 @@ import { Tasks } from './components/manager/admin/tasks'
 export const backendURL = 'http://localhost:5500'
 
 function App() {
-    return (
-        <main className="App">
-            <Topmenu />
-            <MegaMenu />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/basket" element={<Basket />} />
+  return (
+    <main className="App">
+      <Topmenu />
+      <MegaMenu />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/basket" element={<Basket />} />
 
-                {/* PROTECTED ROUTES - /user */}
-                <Route
-                    path="/dashboard"
-                    element={
-                        //<PrivateRoute>
-                            <Dashboard />
-                        //</PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/wishlist"
-                    element={
-                        <PrivateRoute>
-                            <Wishlist />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/profile"
-                    element={
-                        <PrivateRoute>
-                            <Profile />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/invoices"
-                    element={
-                        <PrivateRoute>
-                            <Invoices />
-                        </PrivateRoute>
-                    }
-                />
+        {/* PROTECTED ROUTES - /user */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <PrivateRoute>
+              <Wishlist />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/invoices"
+          element={
+            <PrivateRoute>
+              <Invoices />
+            </PrivateRoute>
+          }
+        />
 
-                {/* PROTECTED ROUTES - /manger/support */}
-                <Route
-                    path="/dashboard"
-                    element={
-                        <PrivateRoute>
-                            <DashboardSupport />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/tickets"
-                    element={
-                        <PrivateRoute>
-                            <Tickets />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/chat"
-                    element={
-                        <PrivateRoute>
-                            <Chat />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/create-task"
-                    element={
-                        <PrivateRoute>
-                            <CreateTask />
-                        </PrivateRoute>
-                    }
-                />
+        {/* PROTECTED ROUTES - /manger/support */}
+        <Route
+          path="/support/dashboard"
+          element={
+            <PrivateRoute>
+              <DashboardSupport />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tickets"
+          element={
+            <PrivateRoute>
+              <Tickets />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <PrivateRoute>
+              <Chat />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/create-task"
+          element={
+            <PrivateRoute>
+              <CreateTask />
+            </PrivateRoute>
+          }
+        />
 
-                {/* PROTECTED ROUTES - /manger/admin */}
-                <Route
-                    path="/DashboardAdmin"
-                    element={
-                        //<PrivateRoute>
-                        <DashboardAdmin />
-                        //</PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/article-management"
-                    element={
-                        <PrivateRoute>
-                            <ArticleManagement />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/tasks"
-                    element={
-                        <PrivateRoute>
-                            TEST
-                            <Tasks />
-                        </PrivateRoute>
-                    }
-                />
-            </Routes>
-            <Footer />
-        </main>
-    )
+        {/* PROTECTED ROUTES - /manger/admin */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <PrivateRoute>
+              <DashboardAdmin />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/article-management"
+          element={
+            <PrivateRoute>
+              <ArticleManagement />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tasks"
+          element={
+            <PrivateRoute>
+              TEST
+              <Tasks />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      <Footer />
+    </main>
+  )
 }
 
 export default App
