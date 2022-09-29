@@ -6,20 +6,21 @@ export function DetailModal() {
   return (
 
     <>
-      <Button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)}>Details</Button>
+      <button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)} style={{width: '45%', marginRight: '10px', marginLeft: '10px'}}>Details</button>
       <Modal
         size="xl"
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
+        className="bg-dark"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="bg-dark">
           <Modal.Title id="example-modal-sizes-title-lg" >Produktdetails</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-                         <div className="p-5">
+                         <div className="p-5 bg-dark">
                             <img src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg" width="53%" alt=""/>
-                            <table class="table">
+                            <table class="table" style={{color: 'red'}}>
                                 <tbody>
                                   <tr>
                                     <td>Formfaktor:</td>
@@ -38,7 +39,6 @@ export function DetailModal() {
                                     <td>2x DDR5 (4.800 MHz, bis zu 6.200 MHz mittels OC)<br/>
                                         Dual-Channel<br/>
                                         Max. 64 GB</td>
-                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <td>Slots (physisch):</td>
@@ -76,7 +76,6 @@ export function DetailModal() {
                                         5x 3,5 mm Klinke (Realtek ALC1220/?ASUS SupremeFX)</td><br/>
                                   </tr>
                                   <tr>
-                                    <th scope="row">3</th>
                                     <td>Herstellergarantie:</td>
                                     <td>3 Jahre</td>
                                   </tr>
