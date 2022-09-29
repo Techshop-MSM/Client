@@ -6,7 +6,7 @@ export function DetailModal() {
   return (
 
     <>
-      <Button className="bg-green" onClick={() => setLgShow(true)}>Details</Button>
+      <Button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)}>Details</Button>
       <Modal
         size="xl"
         show={lgShow}
@@ -83,8 +83,6 @@ export function DetailModal() {
                                 </tbody>
                               </table>
                         </div>
-
-
         </Modal.Body>
       </Modal>
     </>
