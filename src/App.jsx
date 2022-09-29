@@ -26,7 +26,6 @@ import { CreateTask } from './components/manager/support/create-task'
 
 // // Admin
 import { DashboardAdmin } from './components/manager/admin/dashboard'
-import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
 
 export const backendURL = 'http://localhost:5500'
@@ -41,41 +40,6 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/basket" element={<Basket />} />
 
-<<<<<<< HEAD
-                {/* PROTECTED ROUTES - /user */}
-                <Route
-                    path="/dashboard"
-                    element={
-                        //<PrivateRoute>
-                            <Dashboard />
-                        //</PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/wishlist"
-                    element={
-                        <PrivateRoute>
-                            <Wishlist />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/profile"
-                    element={
-                        <PrivateRoute>
-                            <Profile />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/invoices"
-                    element={
-                        <PrivateRoute>
-                            <Invoices />
-                        </PrivateRoute>
-                    }
-                />
-=======
         {/* PROTECTED ROUTES - /user */}
         <Route
           path="/dashboard"
@@ -109,7 +73,6 @@ function App() {
             </PrivateRoute>
           }
         />
->>>>>>> 1f0f9ba0e29984597dcfd3b5cafc1738a862b9c9
 
         {/* PROTECTED ROUTES - /manger/support */}
         <Route
@@ -151,14 +114,6 @@ function App() {
           element={
             <PrivateRoute>
               <DashboardAdmin />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/article-management"
-          element={
-            <PrivateRoute>
-              <ArticleManagement />
             </PrivateRoute>
           }
         />
