@@ -37,8 +37,6 @@ export function Topmenu() {
               Link
             </Nav.Link>
           </Nav>
-          <ShoppingCartPreview/>
-          <LogInModal/>
           <Form className='d-flex'>
             <Form.Control
               type='search'
@@ -48,6 +46,8 @@ export function Topmenu() {
             />
             <Button variant='outline-success'>Search</Button>
           </Form>
+          <ShoppingCartPreview/>
+          <LogInModal/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

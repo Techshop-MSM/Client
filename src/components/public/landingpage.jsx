@@ -3,17 +3,21 @@ import { TopSellings } from './landingpage-assets/TopSellings'
 import { TrendingProducts } from './landingpage-assets/TrendingProducts'
 import { KürlichHinzugefügt } from './landingpage-assets/KürzlichHinzugefügt'
 import { BestBewertet } from './landingpage-assets/BestBewertet'
-import { Cable } from './ArticlePages/Cable'
-
+import { Basket } from './Basket'
+import { Topdescription } from './landingpage-assets/Topdescription'
+import { ActionImg } from './landingpage-assets/ActionImg'
+import { Feature } from './landingpage-assets/Feature'
 
 
 export const Home = () => {
 return (
     <>
+    <Basket/>
     <TopCarousel/>
-    <img src='https://www.alternate.de/tw/mar-86201/teaser/desktop/MAR-86201_Cont_d.jpg' className='img-Fluid'></img>
     <TopSellings/>
+    <ActionImg/>
     <TrendingProducts/>
+    <Feature/>
     <KürlichHinzugefügt/>
     <BestBewertet/>
     </>

@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 body{
-  color: #fff
+  color: #fff !important;
 }
  
-=======
-  /*RATING-STARS*/
-    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
->>>>>>> dev
 
  /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -101,7 +96,7 @@ body{
 }
 
 .cardcontainer:hover {
-    box-shadow: 0 0 45px gray;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
     color: #fff;
     border: none;
 }
@@ -382,7 +377,6 @@ body{
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-<<<<<<< HEAD
     }
     .card-registration .select-arrow {
     top: 13px;
@@ -391,13 +385,6 @@ body{
 
     /*RATING-STARS*/
     @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
-=======
-}
-
-.card-registration .select-arrow {
-  top: 13px;
-}
->>>>>>> dev
 
 
 .cont{
@@ -500,7 +487,6 @@ input.star:checked ~ .rev-box{
   height: 125px;
   overflow: visible;
 }
-<<<<<<< HEAD
 
 
 .testbtn{
@@ -4663,5 +4649,19 @@ text-decoration-skip: spaces;		/** Safari **/
 text-decoration-skip-ink: spaces;
 line-height: 80px;
 }
-=======
->>>>>>> dev
+
+
+
+.fade:not(.show) {
+  opacity: 1;
+}
+
+.nav-tabs .nav-link{
+  padding-left: 179px;
+  padding-right: 179px;
+  width: 100%;
+}
+
+.modal-backdrop.show {
+  opacity: 0.6;
+}

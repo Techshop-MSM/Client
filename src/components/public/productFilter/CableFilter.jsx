@@ -8,8 +8,13 @@ export function CableFilter() {
       <Row>
       <Accordion defaultActiveKey={['1']} alwaysOpen style={{paddingLeft: '0', paddingRight: '0'}}>
 =======
+<<<<<<< HEAD
+      <Row>
+      <Accordion defaultActiveKey={['1']} alwaysOpen style={{paddingLeft: '0', paddingRight: '0'}}>
+=======
         <Row>
             <Accordion defaultActiveKey={['1']} alwaysOpen>
+>>>>>>> dev
 >>>>>>> dev
       <Accordion.Item eventKey="">
         <Accordion.Header>Filter</Accordion.Header>
