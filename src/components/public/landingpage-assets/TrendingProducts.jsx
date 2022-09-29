@@ -9,7 +9,7 @@ import { DetailModal } from '../../reusables/parts/DetailModal';
 
 export function TrendingProducts() {
   return (
-        <div className='container'>
+        <div className='container' style={{marginTop: '30px'}}>
             <div className='row'>
                 <h2 style={{textAlign: 'center'}} className='topunderline'>Trending Products</h2>
                 <hr/>

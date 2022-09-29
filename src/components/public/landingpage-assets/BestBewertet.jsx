@@ -10,7 +10,7 @@ import { DetailModal } from '../../reusables/parts/DetailModal';
 export function BestBewertet() {
   return (
 
-        <div className="container">
+        <div className="container" style={{marginTop: '30px'}}>
             <div className="row">
                 <h2 style={{textAlign: 'center'}} className='topunderline'>BestBewertet</h2>
                 <hr/>
