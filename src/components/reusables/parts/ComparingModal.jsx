@@ -6,22 +6,22 @@ export function ComparingModal() {
   return (
 
     <>
-      <Button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)}>Vergleichen </Button>
+      <button type='button' className='hvr-rectangle-out testbtn btn btn-sm' onClick={() => setLgShow(true)} style={{width: '45%', marginRight: '10px'}}>Vergleichen </button>
       <Modal
         size="xl"
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="bg-dark">
           <Modal.Title id="example-modal-sizes-title-lg" >Deine Vergleichsauswahl</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div id="myDIV" onscroll="myFunction()">
                     <div id="content">
-                        <div style={{maxWidth: '33%', display: 'inline-block'}}>
+                        <div style={{maxWidth: '33%', display: 'inline-block'}} className="bg-dark">
                             <img src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg" width="33%" alt=""/>
-                            <table class="table">
+                            <table class="table" style={{color: 'red'}}>
                                 <tbody>
                                   <tr>
                                     <td>Formfaktor:</td>
@@ -40,7 +40,6 @@ export function ComparingModal() {
                                     <td>2x DDR5 (4.800 MHz, bis zu 6.200 MHz mittels OC)<br/>
                                         Dual-Channel<br/>
                                         Max. 64 GB</td>
-                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <td>Slots (physisch):</td>
@@ -84,9 +83,9 @@ export function ComparingModal() {
                                 </tbody>
                               </table>
                         </div>
-                        <div style={{maxWidth: '33%', display: 'inline-block'}}>
+                        <div style={{maxWidth: '33%', display: 'inline-block'}} className="bg-dark">
                             <img src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg" width="33%" alt=""/>
-                            <table class="table">
+                            <table class="table" style={{color: 'red'}}>
                                 <tbody>
                                   <tr>
                                     <td>Formfaktor:</td>
@@ -105,7 +104,6 @@ export function ComparingModal() {
                                     <td>2x DDR5 (4.800 MHz, bis zu 6.200 MHz mittels OC)<br/>
                                         Dual-Channel<br/>
                                         Max. 64 GB</td>
-                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <td>Slots (physisch):</td>
@@ -149,9 +147,9 @@ export function ComparingModal() {
                                 </tbody>
                               </table>
                         </div>
-                        <div style={{maxWidth: '33%', display: 'inline-block'}}>
+                        <div style={{maxWidth: '33%', display: 'inline-block'}} className="bg-dark">
                             <img src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg" width="33%" alt=""/>
-                            <table class="table">
+                            <table class="table" style={{color: 'red'}}>
                                 <tbody>
                                   <tr>
                                     <td>Formfaktor:</td>
@@ -170,7 +168,6 @@ export function ComparingModal() {
                                     <td>2x DDR5 (4.800 MHz, bis zu 6.200 MHz mittels OC)<br/>
                                         Dual-Channel<br/>
                                         Max. 64 GB</td>
-                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <td>Slots (physisch):</td>
@@ -218,7 +215,7 @@ export function ComparingModal() {
                   </div>
                 
           
-        <div class="modal-footer">
+        <div class="modal-footer bg-dark">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
 

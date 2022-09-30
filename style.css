@@ -1,5 +1,5 @@
 body{
-  color: #fff
+  color: #fff !important;
 }
  
 
@@ -96,7 +96,7 @@ body{
 }
 
 .cardcontainer:hover {
-    box-shadow: 0 0 45px gray;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
     color: #fff;
     border: none;
 }
@@ -381,10 +381,6 @@ body{
     .card-registration .select-arrow {
     top: 13px;
     }
-
-
-    /*RATING-STARS*/
-    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 
 
 .cont{
@@ -4649,6 +4645,21 @@ text-decoration-skip: spaces;		/** Safari **/
 text-decoration-skip-ink: spaces;
 line-height: 80px;
 }
+
+.fade:not(.show) {
+  opacity: 1;
+}
+
+.nav-tabs .nav-link{
+  padding-left: 179px;
+  padding-right: 179px;
+  width: 100%;
+}
+
+.modal-backdrop.show {
+  opacity: 0.6;
+}
+
 
 
 
