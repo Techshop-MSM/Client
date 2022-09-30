@@ -7,6 +7,7 @@ import { Basket } from './Basket'
 import { Topdescription } from './landingpage-assets/Topdescription'
 import { ActionImg } from './landingpage-assets/ActionImg'
 import { Feature } from './landingpage-assets/Feature'
+//import { CableFilter } from './productFilter/CableFilter'
 
 
 export const Home = () => {

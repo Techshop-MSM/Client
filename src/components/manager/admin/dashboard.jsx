@@ -223,6 +223,7 @@ export const DashboardAdmin = () => {
             <thead>
               {articles && (
                 <tr>
+                  {/*
                   {articles.map((article, i) =>
                     Object.keys(article).map((field, i) =>
                       ({ field } === 'baseData' ? (
@@ -237,7 +238,7 @@ export const DashboardAdmin = () => {
                         </td>
                       ))
                     )
-                  )}
+                      )}*/}
                 </tr>
               )}
             </thead>
@@ -245,6 +246,7 @@ export const DashboardAdmin = () => {
               articles.map((article, index) => (
                 <tbody key={index} style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
                   <tr>
+                    {/*
                     {Object.entries(article).map((entry, i) =>
                       entry[0] === 'baseData' ? (
                         Object.entries(entry).map((innerEntry) => (

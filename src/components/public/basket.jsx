@@ -100,7 +100,7 @@ export function Basket() {
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+      <Form.Group as={Col} lg={12}   className="mb-3" controlId="formPlaintextPassword">
         <Form.Label column sm="2">
           Anrede:
         </Form.Label>
@@ -132,7 +132,7 @@ export function Basket() {
         </div>
       ))}
         </Col>
-        <Col lg={6}>
+        <Col lg={1}>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Vorname:</InputGroup.Text>
         <Form.Control
@@ -153,7 +153,6 @@ export function Basket() {
         />
       </InputGroup>
         </Col>
-        <br/>
         <Col lg={6}>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Ihre E-Mail-Adresse:</InputGroup.Text>
@@ -164,7 +163,6 @@ export function Basket() {
         />
       </InputGroup>
         </Col>
-        <br/>
         <Col lg={6}>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Telefon:</InputGroup.Text>
@@ -175,7 +173,6 @@ export function Basket() {
         />
       </InputGroup>
             <h2>Ihre Adresse</h2>
-        <br/>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Straße und Nr:</InputGroup.Text>
         <Form.Control
@@ -185,7 +182,6 @@ export function Basket() {
         />
       </InputGroup>
         </Col>
-        <br/>
         <Col lg={6}>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">PLZ und Ort:</InputGroup.Text>
@@ -196,7 +192,6 @@ export function Basket() {
         />
       </InputGroup>
         </Col>
-        <br/>
         <Col lg={6}>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Land:</InputGroup.Text>
