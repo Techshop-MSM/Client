@@ -26,7 +26,6 @@ import { CreateTask } from './components/manager/support/create-task'
 
 // // Admin
 import { DashboardAdmin } from './components/manager/admin/dashboard'
-import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
 
 export const backendURL = 'http://localhost:5500'
@@ -115,14 +114,6 @@ function App() {
           element={
             <PrivateRoute>
               <DashboardAdmin />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/article-management"
-          element={
-            <PrivateRoute>
-              <ArticleManagement />
             </PrivateRoute>
           }
         />

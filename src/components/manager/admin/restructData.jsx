@@ -2,7 +2,7 @@ export const restuctArticleData = async (articles) => {
   const newData = []
   newData.push(await articles.map((article) => {
     obj = {
-      articleName: article.articleName,
+      articleName: article.baseData.articleName,
       articleNr: article.articleNr,
       category: article.category,
       comments: article.comments,
@@ -14,10 +14,10 @@ export const restuctArticleData = async (articles) => {
       producerNr: article.producerNr,
     }
     details = Object.entries(article).map((entry, i) => {
-      entry[0] != "baseData" && entry[0]: entry[1]
+      entry[0] != "baseData" && (entry[0] = entry[1])
     })
   }))
   
-  console.log(newData)
+  console.log("newData", newData)
   return newData
 }

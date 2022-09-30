@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 body{
   color: #fff
 }
  
-=======
-  /*RATING-STARS*/
-    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
->>>>>>> dev
 
  /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -382,7 +377,6 @@ body{
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-<<<<<<< HEAD
     }
     .card-registration .select-arrow {
     top: 13px;
@@ -391,13 +385,6 @@ body{
 
     /*RATING-STARS*/
     @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
-=======
-}
-
-.card-registration .select-arrow {
-  top: 13px;
-}
->>>>>>> dev
 
 
 .cont{
@@ -500,7 +487,6 @@ input.star:checked ~ .rev-box{
   height: 125px;
   overflow: visible;
 }
-<<<<<<< HEAD
 
 
 .testbtn{
@@ -4663,5 +4649,42 @@ text-decoration-skip: spaces;		/** Safari **/
 text-decoration-skip-ink: spaces;
 line-height: 80px;
 }
-=======
->>>>>>> dev
+
+
+
+/* chatBox */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  width: 5px;
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 1em;
+  background-color: #ddd;
+  outline: 1px solid slategrey;
+  border-radius: 1rem;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.messages-box,
+.chat-box {
+  height: 510px;
+  overflow-y: scroll;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  color: #999;
+}
