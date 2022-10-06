@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { UserProvider } from './components/global/useContext'
+import { DataProvider, UserProvider } from './components/global/useContext'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-   <BrowserRouter>
-     <UserProvider>
-      <App />
-      </UserProvider> 
-   </BrowserRouter>
+  <BrowserRouter>
+    <DataProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </DataProvider>
+  </BrowserRouter>
 )

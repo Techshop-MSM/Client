@@ -1,6 +1,6 @@
 import { Container,Row, Col, Accordion, Form } from 'react-bootstrap';
 
-export function Netzteile() {
+export function NetzteilFilter() {
   return (
     <>
     <Container fluid>
