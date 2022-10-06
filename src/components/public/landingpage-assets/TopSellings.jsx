@@ -14,7 +14,7 @@ export function TopSellings() {
             <div className='row'>
                 <h2 style={{textAlign: 'center'}} className='topunderline'>Top Selling !</h2>
                 <hr/>
-                <div className='col-lg-3' style={{minHeight: '600px'}}>
+                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -35,14 +35,19 @@ export function TopSellings() {
                                 <li>Sockel: 1234</li>
                                 <li>Arbeitsspeicher; DDR4 2666 - 6000 MH</li>
                                 <li>Formfaktor: ATX</li>
+                                <li>Hersteller: ASUS</li>
+
                             </ul>
-                            <DetailModal/>
-                            <ComparingModal/>
-                            <button type='button' className='hvr-rectangle-out testbtn btn btn-sm'>In den Warenkorb</button>
+                            <div className='col-lg-12' style={{ position: 'absolute', top: '110%'}}>
+                                <DetailModal/>
+                                <ComparingModal/>
+                                <br/>
+                                <button type='button' className='hvr-rectangle-out testbtn btn btn-sm' style={{width: '93%', marginTop: '10px',marginLeft: '10px', marginRight: '10px' }}>In den Warenkorb</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px'}}>
+                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -63,14 +68,19 @@ export function TopSellings() {
                                 <li>Sockel: 1234</li>
                                 <li>Arbeitsspeicher; DDR4 2666 - 6000 MH</li>
                                 <li>Formfaktor: ATX</li>
+                                <li>Hersteller: ASUS</li>
+
                             </ul>
-                            <DetailModal/>
-                            <ComparingModal/>
-                            <button type='button' className='hvr-rectangle-out testbtn btn btn-sm'>In den Warenkorb</button>
+                            <div className='col-lg-12' style={{ position: 'absolute', top: '110%'}}>
+                                <DetailModal/>
+                                <ComparingModal/>
+                                <br/>
+                                <button type='button' className='hvr-rectangle-out testbtn btn btn-sm' style={{width: '93%', marginTop: '10px',marginLeft: '10px', marginRight: '10px' }}>In den Warenkorb</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px'}}>
+                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -91,14 +101,19 @@ export function TopSellings() {
                                 <li>Sockel: 1234</li>
                                 <li>Arbeitsspeicher; DDR4 2666 - 6000 MH</li>
                                 <li>Formfaktor: ATX</li>
+                                <li>Hersteller: ASUS</li>
+
                             </ul>
-                            <DetailModal/>
-                            <ComparingModal/>
-                            <button type='button' className='hvr-rectangle-out testbtn btn btn-sm'>In den Warenkorb</button>
+                            <div className='col-lg-12' style={{ position: 'absolute', top: '110%'}}>
+                                <DetailModal/>
+                                <ComparingModal/>
+                                <br/>
+                                <button type='button' className='hvr-rectangle-out testbtn btn btn-sm' style={{width: '93%', marginTop: '10px',marginLeft: '10px', marginRight: '10px' }}>In den Warenkorb</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px'}}>
+                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -119,10 +134,15 @@ export function TopSellings() {
                                 <li>Sockel: 1234</li>
                                 <li>Arbeitsspeicher; DDR4 2666 - 6000 MH</li>
                                 <li>Formfaktor: ATX</li>
+                                <li>Hersteller: ASUS</li>
+
                             </ul>
-                            <DetailModal/>
-                            <ComparingModal/>
-                            <button type='button' className='hvr-rectangle-out testbtn btn btn-sm'>In den Warenkorb</button>
+                            <div className='col-lg-12' style={{ position: 'absolute', top: '110%'}}>
+                                <DetailModal/>
+                                <ComparingModal/>
+                                <br/>
+                                <button type='button' className='hvr-rectangle-out testbtn btn btn-sm' style={{width: '93%', marginTop: '10px',marginLeft: '10px', marginRight: '10px' }}>In den Warenkorb</button>
+                            </div>
                         </div>
                     </div>
                 </div>

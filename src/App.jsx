@@ -10,7 +10,7 @@ import { Footer } from './components/reusables/parts/Footer'
 // PageRoutes
 import { Home } from './components/public/landingpage'
 import { Shop } from './components/public/shop'
-import { Basket } from './components/public/basket'
+import { Basket } from './components/public/Basket'
 
 // User & Company
 import { Dashboard } from './components/user/dashboard'
@@ -26,7 +26,6 @@ import { CreateTask } from './components/manager/support/create-task'
 
 // // Admin
 import { DashboardAdmin } from './components/manager/admin/dashboard'
-import { ArticleManagement } from './components/manager/admin/article-management'
 import { Tasks } from './components/manager/admin/tasks'
 
 export const backendURL = 'http://localhost:5500'
@@ -151,14 +150,6 @@ function App() {
           element={
             <PrivateRoute>
               <DashboardAdmin />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/article-management"
-          element={
-            <PrivateRoute>
-              <ArticleManagement />
             </PrivateRoute>
           }
         />

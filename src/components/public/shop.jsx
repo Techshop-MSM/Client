@@ -1,12 +1,20 @@
-import { Container } from 'react-bootstrap'
+import { ShopContent } from './shop-assets/content'
+import { Filter } from './shop-assets/filter'
 
-const Filter = () => {}
+import { useContext } from 'react'
+import { AppContext, DataContext } from '../global/useContext'
 
 export const Shop = () => {
-    return (
-        <>
-            <Filter></Filter>
-            <Container></Container>
-        </>
-    )
+  const { category, setCategory, articles, setArticles } = useContext(DataContext)
+  return (
+    <>
+      <button onClick={() => setCategory('case')}>CASE</button>
+      <button onClick={() => setCategory('cpu')}>CPU</button>
+      <button onClick={() => setCategory('gpu')}>GPU</button>
+      <button onClick={() => setCategory('mainboard')}>MAINBOARD</button>
+
+      <Filter />
+      <ShopContent />
+    </>
+  )
 }
