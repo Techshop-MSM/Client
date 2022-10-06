@@ -1,6 +1,14 @@
 body{
   color: #fff !important;
 }
+
+th{
+  color: red;
+}
+
+td{
+  color: #fff;
+}
  
 
  /* CUSTOMIZE THE CAROUSEL
@@ -4664,22 +4672,36 @@ line-height: 80px;
 }
 
 
+
+
+
+
 /* chatBox */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  width: 5px;
-  background: #f5f5f5;
+  width: 8px;
+  background: #242628;
 }
 
+
+
 ::-webkit-scrollbar-thumb {
-  width: 1em;
-  background-color: #ddd;
-  outline: 1px solid slategrey;
+  width: 1.5em;
+  background-color: red;
   border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  outline: 2px solid red;
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: red;
 }
 
 .text-small {
