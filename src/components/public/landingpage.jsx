@@ -7,11 +7,23 @@ import { Basket } from './Basket'
 import { Topdescription } from './landingpage-assets/Topdescription'
 import { ActionImg } from './landingpage-assets/ActionImg'
 import { Feature } from './landingpage-assets/Feature'
+<<<<<<< HEAD
+import { Megatest } from '../reusables/parts/Megatest'
+import { DashboardTemplate } from '../user/dashboards/DashbordTemplate'
+import { Bestellungen } from '../user/dashboards/Bestellungen'
+//import { CableFilter } from './productFilter/CableFilter'
+=======
+>>>>>>> dev
 
 
 export const Home = () => {
 return (
     <>
+<<<<<<< HEAD
+    <Bestellungen/>
+    <Megatest/>
+=======
+>>>>>>> dev
     <Basket/>
     <TopCarousel/>
     <TopSellings/>
