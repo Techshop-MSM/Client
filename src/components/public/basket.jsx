@@ -4,8 +4,17 @@ import { Tab, Tabs, Container, Col, Row, Table, Form, InputGroup,ListGroup,Butto
 
 
 export function Basket() {
+
   return (
     <>
+        <tr>
+      <th>Artikel</th>
+      <th>Verfügbarkeit</th>
+      <th>Anzahl</th>
+      <th>Stückpreis</th>
+      <th>Summe</th>
+      <th><span></span></th>
+    </tr>
     <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
   <Tab eventKey={1} title="Ihr Warenkorb">
     <Container fluid style={{padding: '100px'}}>
@@ -14,7 +23,7 @@ export function Basket() {
             <Table responsive style={{color: '#fff'}}>
   <thead>
     <tr>
-      <th>Artikel</th>
+      <th>Artijhgfhjkel</th>
       <th>Verfügbarkeit</th>
       <th>Anzahl</th>
       <th>Stückpreis</th>
@@ -145,7 +154,7 @@ export function Basket() {
         <br/>
         <Col lg={6}>
         <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon1">Nachnahme:</InputGroup.Text>
+        <InputGroup.Text id="basic-addon1">Nachname:</InputGroup.Text>
         <Form.Control
           placeholder=""
           aria-label="Username"

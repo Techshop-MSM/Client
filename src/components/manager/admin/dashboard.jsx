@@ -254,7 +254,7 @@ export const DashboardAdmin = () => {
                             {innerEntry[1]}
                           </td>
                         ))
-                      ) : (
+                      ) :
                         <td name="an" key={i}>
                           {entry[1]}
                         </td>
