@@ -1,6 +1,14 @@
 body{
   color: #fff !important;
 }
+
+th{
+  color: red;
+}
+
+td{
+  color: #fff;
+}
  
 
  /* CUSTOMIZE THE CAROUSEL
@@ -381,10 +389,6 @@ body{
     .card-registration .select-arrow {
     top: 13px;
     }
-
-
-    /*RATING-STARS*/
-    @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 
 
 .cont{
@@ -4664,4 +4668,56 @@ line-height: 80px;
 
 .modal-backdrop.show {
   opacity: 0.6;
+}
+
+
+
+
+
+
+/* chatBox */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  width: 8px;
+  background: #242628;
+}
+
+
+
+::-webkit-scrollbar-thumb {
+  width: 1.5em;
+  background-color: red;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  outline: 2px solid red;
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.messages-box,
+.chat-box {
+  height: 510px;
+  overflow-y: scroll;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  color: #999;
 }

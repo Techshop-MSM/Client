@@ -1,16 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../../global/useContext'
+import { AppContext, DataContext } from '../../global/useContext'
 import { Col, Container, Row } from 'react-bootstrap'
-import { backendURL } from '../../../App'
+import { databaseManager } from '../../global/databaseManager'
 
 export const DashboardAdmin = () => {
-  const { userData } = useContext(AppContext)
+  const { userData, category, setCategory, articles } = useContext(DataContext)
   const [file, setFile] = useState(null)
   const [jsonData, setJsonData] = useState(null)
-  const [category, setCategory] = useState(null)
-  const [articles, setArticles] = useState(null)
 
   const buttonStyle = {
+    backgroundColor: '#ededed',
     width: '2rem',
     margin: '0.5rem 0.5rem 0.5rem 2rem',
     padding: '0.2rem 0.3rem',
@@ -19,9 +18,10 @@ export const DashboardAdmin = () => {
   }
 
   const deleteButton = {
+    backgroundColor: '#ededed',
     width: '1.5rem',
-    margin: '0.5rem 0.5rem 0.5rem 2rem',
-    padding: '0.1rem 0.1rem',
+    margin: '0.1rem 0.1rem 0.1rem 0.5rem',
+    padding: '0.3rem 0.3rem',
     borderRadius: '0.5rem',
   }
 
@@ -49,48 +49,9 @@ export const DashboardAdmin = () => {
     reader.readAsText(file)
   }
 
-  // ------------------ load- and convertData -------------
-
-  const convertData = () => {
-    const newData = Object.keys(articles.baseData).forEach(function (key, i) {
-      console.log(key)
-    })
-    console.log('convert', newData)
-  }
-
   const cat = (e) => {
     setCategory(e.target.value)
     return cat
-  }
-
-  const DatabaseManager = async (reason) => {
-    // if (userData.group != admin) {
-    //   return
-    // }
-
-    reason === 'clear' && setArticles('load new Category...')
-
-    // Upload Data to DB
-    const upload = {
-      reason: reason,
-      category: category,
-      group: userData.group,
-      data: jsonData,
-    }
-
-    const res = await fetch(`${backendURL}/updateDatabase`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(upload),
-    })
-    const rawArticles = await res.json()
-    console.log('rawArticles', rawArticles)
-    // const articles = await restuctArticleData(rawArticles)
-    // console.log(articles)
-    setArticles(rawArticles)
   }
 
   const selectField = () => {
@@ -107,6 +68,23 @@ export const DashboardAdmin = () => {
         <option value="soundCard">Soundkarte</option>
       </select>
     )
+  }
+
+  const innerFieldAnalyse = (value) => {
+    switch (value) {
+      case 'ratingCounter':
+        return false
+        break
+      case 'ratings':
+        return false
+        break
+      case 'comments':
+        return false
+        break
+      default:
+        return true
+        break
+    }
   }
 
   return (
@@ -140,19 +118,13 @@ export const DashboardAdmin = () => {
             <img
               src="../../../../public/images/add.svg"
               alt=""
-              onClick={() => DatabaseManager('add')}
-              style={buttonStyle}
-            />
-            <img
-              src="../../../../public/images/edit.svg"
-              alt=""
-              onClick={() => DatabaseManager('edit')}
+              onClick={() => databaseManager('add')}
               style={buttonStyle}
             />
             <img
               src="../../../../public/images/upload.svg"
               alt=""
-              onClick={() => DatabaseManager('upload')}
+              onClick={() => databaseManager('upload')}
               style={buttonStyle}
             />
           </div>
@@ -186,7 +158,7 @@ export const DashboardAdmin = () => {
                       <img
                         src="../../../../public/images/delete.svg"
                         alt=""
-                        onClick={() => DatabaseManager('delete')}
+                        onClick={() => databaseManager('delete')}
                         style={deleteButton}
                       />
                     </td>
@@ -208,13 +180,13 @@ export const DashboardAdmin = () => {
               <img
                 src="../../../../public/images/load.svg"
                 alt=""
-                onClick={() => DatabaseManager('load')}
+                onClick={() => databaseManager('load')}
                 style={buttonStyle}
               />
               <img
                 src="../../../../public/images/clear.svg"
                 alt=""
-                onClick={() => DatabaseManager('clear')}
+                onClick={() => databaseManager('clear')}
                 style={buttonStyle}
               />
             </div>
@@ -223,60 +195,74 @@ export const DashboardAdmin = () => {
             <thead>
               {articles && (
                 <tr>
-                  {/* {articles.map((article, i) =>
-                    Object.keys(article).map((field, i) =>
-                      ({ field } === 'baseData' ? (
-                        Object.keys(field).map((innerField) => (
-                          <td name="an" style={{ border: 'solid' }} key={i}>
-                            {innerField}
+                  {Object.keys(articles[0]).map((field, i) =>
+                    field === 'baseData'
+                      ? Object.keys(articles[0].baseData).map(
+                          (innerField, i) =>
+                            innerFieldAnalyse(innerField) && (
+                              <td name="an" style={{ border: 'solid' }} key={`kb_${i}`}>
+                                {innerField}
+                              </td>
+                            )
+                        )
+                      : field != '_id' && (
+                          <td name="an" style={{ border: 'solid' }} key={`ke_${i}`}>
+                            {field}
                           </td>
-                        ))
-                      ) : (
-                        <td name="an" style={{ border: 'solid' }} key={i}>
-                          {field}
-                        </td>
-                      ))
-                    )
-                  )} */}
+                        )
+                  )}
                 </tr>
               )}
             </thead>
-            {articles ? (
-              articles.map((article, index) => (
-                <tbody key={index} style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
-                  <tr>
-                    {/* {Object.entries(article).map((entry, i) =>
-                      entry[0] === 'baseData' ? (
-                        Object.entries(entry).map((innerEntry) => (
-                          <td name="an" key={i}>
-                            {innerEntry[1]}
-                          </td>
-                        ))
-                      ) : (
-                        <td name="an" key={i}>
-                          {entry[1]}
-                        </td>
-                      )
-                    )} */}
+            <tbody style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
+              {articles ? (
+                articles.map((article, index) => (
+                  <tr key={`row_${index}`} name={article._id}>
+                    {Object.entries(article).map((entry, i) =>
+                      entry[0] === 'baseData'
+                        ? Object.values(entry[1]).map(
+                            (innerEntry, bi) =>
+                              cutData(innerEntry) && (
+                                <td
+                                  name="an"
+                                  key={`b_${bi}`}
+                                  style={{ padding: '0.1rem 0.2rem', textAlign: 'center' }}
+                                >
+                                  {innerEntry}
+                                </td>
+                              )
+                          )
+                        : entry[0] != '_id' && (
+                            <td name="an" key={`e_${i}`}>
+                              {entry[1]}
+                            </td>
+                          )
+                    )}
                     {/* Object.entries(entry).map((innerEntry) => innerEntry[1]) */}
+                    <td>
+                      <img
+                        src="../../../../public/images/edit.svg"
+                        alt=""
+                        onClick={() => databaseManager('edit')}
+                        style={deleteButton}
+                      />
+                    </td>
                     <td>
                       <img
                         src="../../../../public/images/delete.svg"
                         alt=""
-                        onClick={() => DatabaseManager('delete')}
+                        onClick={() => databaseManager('delete')}
                         style={deleteButton}
                       />
                     </td>
                   </tr>
-                </tbody>
-              ))
-            ) : (
-              <tbody>
+                ))
+              ) : (
                 <tr>
                   <td style={{ textAlign: 'center', padding: '2rem' }}>Load Category ...</td>
                 </tr>
-              </tbody>
-            )}
+              )}
+            </tbody>
           </table>
         </Col>
       </Row>

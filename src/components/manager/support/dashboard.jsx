@@ -48,7 +48,6 @@ const messagePreview = (arr) => {
       onClick={() => createChat(request)}
     >
       <div className="media">
-        <img src="" alt="" />
         <div className="media-body ml-4">
           <div className="d-flex align-items-center justify-content-between mb-1">
             <h6 className="mb-0">{request.user}</h6>
@@ -76,13 +75,17 @@ export const DashboardSupport = () => {
   const [open, setOpen] = useState([])
   const [status, setStatus] = useState([])
 
-  chatRequests.map((request) => {
-    request.status ? setPending(...pending, request) : setOpen(...open, request)
-  })
+  useEffect(() => {
+    chatRequests.map((request) => {
+      request.status ? setPending([...pending, request]) : setOpen([...open, request])
+    })
+  },[])
+
   //setStatus(...status, pending + open)
 
   useEffect(() => {
     console.log(status)
+    
   }, [open, pending, status])
 
   const createChat = (request) => {
