@@ -217,12 +217,12 @@ td{
 }
 
 
-/*TOP_MENU*/
+/*TOP_MENU*
 .navbar .megamenu {
     padding: 1rem;
 }
 
-/* ============ desktop view ============ */
+/* ============ desktop view ============ 
 @media all and (min-width: 992px) {
 
     .navbar .has-megamenu {
@@ -241,7 +241,7 @@ td{
 /* ============ desktop view .end// ============ */
 
 
-/* ============ mobile view ============ */
+/* ============ mobile view ============ 
 @media(max-width: 991px) {
 
     .navbar.fixed-top .navbar-collapse,
@@ -369,7 +369,7 @@ td{
 }
 
 
-/*Testhover Megamenu*/
+/*Testhover Megamenu
 .testhover div {
   color: red;
   display: none;
@@ -391,6 +391,10 @@ td{
     }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 .cont{
   width: 100%;
   max-width: 260px;

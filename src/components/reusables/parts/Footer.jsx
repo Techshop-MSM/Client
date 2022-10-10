@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { ImpressumDatenschutz } from '../../public/ImpressumDatenschutz'
 
 export function Footer() {
   return (
@@ -91,14 +92,12 @@ export function Footer() {
             </li>
           </ul>
         </div>
-
         <div className="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
-                Home
-              </a>
+              {' '}
+              <ImpressumDatenschutz />
             </li>
             <li className="nav-item mb-2">
               <a href="#" className="nav-link p-0 text-muted">
@@ -122,7 +121,6 @@ export function Footer() {
             </li>
           </ul>
         </div>
-
         <div className="col-md-5 offset-md-1 mb-3">
           <form>
             <h5>Subscribe to our newsletter</h5>
