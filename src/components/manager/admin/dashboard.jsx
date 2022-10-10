@@ -195,44 +195,6 @@ export const DashboardAdmin = () => {
             <thead>
               {articles && (
                 <tr>
-<<<<<<< HEAD
-                  {/*
-                  {articles.map((article, i) =>
-                    Object.keys(article).map((field, i) =>
-                      ({ field } === 'baseData' ? (
-                        Object.keys(field).map((innerField) => (
-                          <td name="an" style={{ border: 'solid' }} key={i}>
-                            {innerField}
-                          </td>
-                        ))
-                      ) : (
-                        <td name="an" style={{ border: 'solid' }} key={i}>
-                          {field}
-                        </td>
-                      ))
-                    )
-                      )}*/}
-                </tr>
-              )}
-            </thead>
-            {articles ? (
-              articles.map((article, index) => (
-                <tbody key={index} style={{ lineHeight: '1.6rem', border: 'solid lightgreen' }}>
-                  <tr>
-                    {/*
-                    {Object.entries(article).map((entry, i) =>
-                      entry[0] === 'baseData' ? (
-                        Object.entries(entry).map((innerEntry) => (
-                          <td name="an" key={i}>
-                            {innerEntry[1]}
-                          </td>
-                        ))
-                      ) :
-                        <td name="an" key={i}>
-                          {entry[1]}
-                        </td>
-                      )
-=======
                   {Object.keys(articles[0]).map((field, i) =>
                     field === 'baseData'
                       ? Object.keys(articles[0].baseData).map(
@@ -275,7 +237,6 @@ export const DashboardAdmin = () => {
                               {entry[1]}
                             </td>
                           )
->>>>>>> dev
                     )}
                     {/* Object.entries(entry).map((innerEntry) => innerEntry[1]) */}
                     <td>
