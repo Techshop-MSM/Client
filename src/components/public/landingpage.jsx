@@ -8,18 +8,17 @@ import { Topdescription } from './landingpage-assets/Topdescription'
 import { ActionImg } from './landingpage-assets/ActionImg'
 import { Feature } from './landingpage-assets/Feature'
 
-
 export const Home = () => {
-return (
+  return (
     <>
-    <Basket/>
-    <TopCarousel/>
-    <TopSellings/>
-    <ActionImg/>
-    <TrendingProducts/>
-    <Feature/>
-    <KürlichHinzugefügt/>
-    <BestBewertet/>
+      <Basket />
+      <TopCarousel />
+      <TopSellings />
+      <ActionImg />
+      <TrendingProducts />
+      <Feature />
+      <KürlichHinzugefügt />
+      <BestBewertet />
     </>
-)
+  )
 }
