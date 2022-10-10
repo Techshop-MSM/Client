@@ -48,7 +48,7 @@ export function Basket() {
                           <option value="3">3</option>
                         </Form.Select>
                       </td>
-                      <td>199,90 euro</td>
+                      <td>199,80 euro</td>
                       <td>199,90 Euro</td>
                       <td>
                         <Button variant="danger">Entfernen</Button>{' '}
