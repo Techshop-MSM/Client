@@ -2,11 +2,13 @@ import { useContext } from 'react'
 import { AppContext, DataContext } from './useContext'
 import { backendURL } from '../../App'
 
-export const databaseManager = async (cat, reason) => {
-  console.log('reason', reason)
+export const databaseManager = async (reason) => {
+ 
+  console.log('reason & cat', reason)
   const { userData } = useContext(AppContext)
-  console.log('userDataToUpload', userData)
+  console.log('userData', userData)
   const { category, articles, setArticles } = useContext(DataContext)
+ 
   //reason === 'clear' && setArticles([])
 
  
