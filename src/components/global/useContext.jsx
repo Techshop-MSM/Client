@@ -11,7 +11,7 @@ export const DataContext = createContext()
 // ----------------- LS LOAD -----------------
 const tokenFromLS = getFromLocalStorage('auth')
 const userFromLS = getFromLocalStorage('user')
-console.log("LS LOAD", userFromLS, tokenFromLS )
+console.log('LS LOAD', userFromLS, tokenFromLS)
 
 // ----------------- USER -----------------
 export const UserProvider = ({ children }) => {
@@ -25,8 +25,8 @@ export const UserProvider = ({ children }) => {
     token ? saveInLocalStorage('auth', token) : deleteInLocalStorage('auth')
     userData ? saveInLocalStorage('user', userData) : deleteInLocalStorage('user')
   }, [token])
-  console.log("user", userData)
-  console.log("token", token)
+  console.log('user', userData)
+  console.log('token', token)
 
   return (
     <AppContext.Provider value={{ token, setToken, userData, setUserData }}>

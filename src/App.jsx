@@ -34,7 +34,7 @@ function App() {
   return (
     <main className="App">
       <Topmenu />
-      <MegaMenu />
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />

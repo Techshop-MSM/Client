@@ -4,17 +4,14 @@ import { Button, Container, Col, Row, Form, Modal, Tabs, Tab } from 'react-boots
 export function ComparingModal() {
   const [lgShow, setLgShow] = useState(false)
   return (
-    <>
-      <button
+    <> <Button variant="secondary"
         type="button"
-        className="hvr-rectangle-out testbtn btn btn-sm"
+        className="hvr-rectangle-out testbtn btn"
         onClick={() => setLgShow(true)}
-        style={{
-          marginTop: '10px',
-        }}
+        
       >
-        <img src="../../../../public/images/compare.svg" alt="" style={{ width: '2rem' }} />
-      </button>
+        Vergleichsauswahl öffnen
+      </Button>
       <Modal
         size="xl"
         show={lgShow}
