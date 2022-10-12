@@ -12,7 +12,7 @@ import { StorageFilter } from '../productFilter/StorageFilter'
 
 export const Filter = () => {
   const { userData } = useContext(AppContext)
-  const { category, setCategory, articles, setArticles } = useContext(DataContext)
+  const { category } = useContext(DataContext)
 
   return (
     <>
