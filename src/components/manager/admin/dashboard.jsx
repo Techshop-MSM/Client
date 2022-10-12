@@ -4,7 +4,8 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { databaseManager } from '../../global/databaseManager'
 
 export const DashboardAdmin = () => {
-  const { userData, category, setCategory, articles } = useContext(DataContext)
+  const { userData } = useContext(AppContext)
+  const { category, setCategory, articles, setArticles } = useContext(DataContext)
   const [file, setFile] = useState(null)
   const [jsonData, setJsonData] = useState(null)
 
@@ -118,13 +119,13 @@ export const DashboardAdmin = () => {
             <img
               src="../../../../public/images/add.svg"
               alt=""
-              onClick={() => databaseManager('add')}
+              onClick={() => databaseManager({ reason: 'add', setArticles })}
               style={buttonStyle}
             />
             <img
               src="../../../../public/images/upload.svg"
               alt=""
-              onClick={() => databaseManager('upload')}
+              onClick={() => databaseManager({ reason: 'upload', setArticles })}
               style={buttonStyle}
             />
           </div>
@@ -158,7 +159,7 @@ export const DashboardAdmin = () => {
                       <img
                         src="../../../../public/images/delete.svg"
                         alt=""
-                        onClick={() => databaseManager('delete')}
+                        onClick={() => databaseManager({ reason: 'delete', setArticles })}
                         style={deleteButton}
                       />
                     </td>
@@ -180,13 +181,13 @@ export const DashboardAdmin = () => {
               <img
                 src="../../../../public/images/load.svg"
                 alt=""
-                onClick={() => databaseManager('load')}
+                onClick={() => databaseManager({ reason: 'load', setArticles })}
                 style={buttonStyle}
               />
               <img
                 src="../../../../public/images/clear.svg"
                 alt=""
-                onClick={() => databaseManager('clear')}
+                onClick={() => databaseManager({ reason: 'clear', setArticles })}
                 style={buttonStyle}
               />
             </div>
@@ -222,7 +223,7 @@ export const DashboardAdmin = () => {
                       entry[0] === 'baseData'
                         ? Object.values(entry[1]).map(
                             (innerEntry, bi) =>
-                              cutData(innerEntry) && (
+                              category && (
                                 <td
                                   name="an"
                                   key={`b_${bi}`}
@@ -243,7 +244,7 @@ export const DashboardAdmin = () => {
                       <img
                         src="../../../../public/images/edit.svg"
                         alt=""
-                        onClick={() => databaseManager('edit')}
+                        onClick={() => databaseManager({ reason: 'edit', setArticles })}
                         style={deleteButton}
                       />
                     </td>
@@ -251,7 +252,7 @@ export const DashboardAdmin = () => {
                       <img
                         src="../../../../public/images/delete.svg"
                         alt=""
-                        onClick={() => databaseManager('delete')}
+                        onClick={() => databaseManager({ reason: 'delete', setArticles })}
                         style={deleteButton}
                       />
                     </td>
