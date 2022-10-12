@@ -39,11 +39,16 @@ export const UserProvider = ({ children }) => {
 export const DataProvider = ({ children }) => {
   const [category, setCategory] = useState('case')
   const [articles, setArticles] = useState(null)
+  const [compare, setCompare] = useState([])
 
   useEffect(() => {
     saveInLocalStorage('cat', category)
     saveInLocalStorage('articles', articles)
-  }, [category, articles])
+  }, [category, articles, compare])
+
+  useEffect(() => {
+    setCompare([])
+  }, [category])
 
   return (
     <DataContext.Provider value={{ category, setCategory, articles, setArticles }}>
