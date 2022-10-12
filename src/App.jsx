@@ -34,20 +34,18 @@ function App() {
   return (
     <main className="App">
       <Topmenu />
-      <MegaMenu />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/basket" element={<Basket />} />
 
-<<<<<<< HEAD
                 {/* PROTECTED ROUTES - /user */}
                 <Route
                     path="/dashboard"
                     element={
-                        //<PrivateRoute>
+                        <PrivateRoute>
                             <Dashboard />
-                        //</PrivateRoute>
+                        </PrivateRoute>
                     }
                 />
                 <Route
@@ -74,41 +72,6 @@ function App() {
                         </PrivateRoute>
                     }
                 />
-=======
-        {/* PROTECTED ROUTES - /user */}
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/wishlist"
-          element={
-            <PrivateRoute>
-              <Wishlist />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <PrivateRoute>
-              <Profile />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/invoices"
-          element={
-            <PrivateRoute>
-              <Invoices />
-            </PrivateRoute>
-          }
-        />
->>>>>>> 1f0f9ba0e29984597dcfd3b5cafc1738a862b9c9
 
         {/* PROTECTED ROUTES - /manger/support */}
         <Route
