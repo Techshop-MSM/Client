@@ -1,4 +1,4 @@
-import { Col, Container, Row, Button, Card,Form, CardGroup, Accordion } from 'react-bootstrap'
+import { Col, Container, Row, Button, Card,Form, Table, Accordion } from 'react-bootstrap'
 
 
 
@@ -61,27 +61,273 @@ export const Bestellungen = () => {
                 <Col lg={12}>
                 <Accordion>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Datum: 00.00.2000</Accordion.Header>
+        <Accordion.Header>
+        <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+        </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
         </Accordion.Body>
       </Accordion.Item>
+
+
+
+
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
+      <Accordion.Header>
+      <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+      </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
+        </Accordion.Body>
+      </Accordion.Item>
+
+
+      <Accordion.Item eventKey="2">
+      <Accordion.Header>
+      <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+      </Accordion.Header>
+        <Accordion.Body>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="3">
+      <Accordion.Header>
+      <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+      </Accordion.Header>
+        <Accordion.Body>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="4">
+      <Accordion.Header>
+      <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+      </Accordion.Header>
+        <Accordion.Body>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="5">
+      <Accordion.Header>
+      <Table style={{color: '#000'}}>
+      <thead>
+        <tr>
+          <th><span style={{fontWeight: 'bold'}}>Datum:</span> 00.00.2000</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellnummer:</span> 00000000000000</th>
+          <th><span style={{fontWeight: 'bold'}}>Versandart:</span> DHL Express</th>
+          <th><span style={{fontWeight: 'bold'}}>Bestellstatus:</span> Komplett abgeschlossen</th>
+
+        </tr>
+      </thead>
+    </Table>
+      </Accordion.Header>
+        <Accordion.Body>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Anzahl</th>
+          <th>Stückpreis</th>
+          <th>Summe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Akasa USB 3.1 Gen2 Adapter
+            ZUUS-361 - Aktueller Einzelpreis: 14,90 €
+            </td>
+          <td>
+            1
+            </td>
+          <td>
+            14,52 €*
+            </td>
+            <td>
+            14,52 €*
+            </td>
+        </tr>
+      </tbody>
+    </Table>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

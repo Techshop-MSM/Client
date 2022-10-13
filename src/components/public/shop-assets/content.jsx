@@ -12,7 +12,6 @@ import { rating } from './ratingHandler'
 export const ShopContent = () => {
   const { articles, category, compare, setCompare } = useContext(DataContext)
   const img = '../../../../public/images'
-  
 
   useEffect(() => {
     console.log(compare)
@@ -86,7 +85,7 @@ export const ShopContent = () => {
                   >
                     <DetailModal />
                     <button
-                      onClick={(() => onCompareHandler(article._id))}
+                      onClick={() => onCompareHandler(article._id)}
                       className="hvr-rectangle-out testbtn btn btn-sm"
                       style={{
                         marginTop: '10px',

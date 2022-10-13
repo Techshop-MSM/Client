@@ -14,10 +14,10 @@ export function ComparingModal() {
   }, [items])
 
   compare &&
-  compare.map((item, i) => {
-    items.push(articles.find((elem) => elem._id == item))
-    setCompare([])
-  })
+    compare.map((item, i) => {
+      items.push(articles.find((elem) => elem._id == item))
+      setCompare([])
+    })
 
   return (
     <>
@@ -39,7 +39,7 @@ export function ComparingModal() {
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header className="bg-dark border">
+        <Modal.Header className="day dark-scheme border">
           <Modal.Title id="example-modal-sizes-title-lg">Deine Vergleichsauswahl</Modal.Title>
           <button
             type="button"
@@ -58,7 +58,7 @@ export function ComparingModal() {
                   display: 'inline-block',
                   padding: '1rem',
                 }}
-                className="bg-dark"
+                className="day dark-scheme"
               >
                 <img
                   src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg"
@@ -69,9 +69,15 @@ export function ComparingModal() {
               </div>
             </div>
           </div>
-
           <div className="modal-footer bg-dark">
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {setItems([]), setLgShow(!lgShow)}}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onClick={() => {
+                setItems([]), setLgShow(!lgShow)
+              }}
+            >
               Close
             </button>
           </div>
