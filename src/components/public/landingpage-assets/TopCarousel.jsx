@@ -7,7 +7,7 @@ export function TopCarousel() {
     <Carousel fade>
       <Carousel.Item>
         <img
-          className='d-block w-100'
+          className='d-block w-100 mb-3'
           src='https://previews.123rf.com/images/witthaya/witthaya1207/witthaya120700024/14364295-gr%C3%BCne-platine-als-hintergrund.jpg'
           alt='First slide'
         />

@@ -5,7 +5,7 @@ export function ImpressumDatenschutz() {
   const [lgShow, setLgShow] = useState(false);
   return (
     <>
-      <button className="hvr-rectangle-out testbtn btn btn-sm" onClick={() => setLgShow(true)} style={{width: '45%', marginRight: '10px', marginLeft: '10px'}}>Impressum / Datenschutz</button>
+      <button className="hvr-rectangle-out  btn btn-sm" onClick={() => setLgShow(true)} style={{width: '100%', marginRight: '10px', marginLeft: '10px'}}>Impressum / Datenschutz</button>
       <Modal
         size="xl"
         show={lgShow}

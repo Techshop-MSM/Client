@@ -79,13 +79,12 @@ export const DashboardSupport = () => {
     chatRequests.map((request) => {
       request.status ? setPending([...pending, request]) : setOpen([...open, request])
     })
-  },[])
+  }, [])
 
   //setStatus(...status, pending + open)
 
   useEffect(() => {
     console.log(status)
-    
   }, [open, pending, status])
 
   const createChat = (request) => {
