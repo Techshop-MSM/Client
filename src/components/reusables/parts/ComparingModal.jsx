@@ -39,7 +39,7 @@ export function ComparingModal() {
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header className="bg-dark border">
+        <Modal.Header className="day dark-scheme border">
           <Modal.Title id="example-modal-sizes-title-lg">Deine Vergleichsauswahl</Modal.Title>
           <button
             type="button"
@@ -58,7 +58,7 @@ export function ComparingModal() {
                   display: 'inline-block',
                   padding: '1rem',
                 }}
-                className="bg-dark"
+                className="day dark-scheme"
               >
                 <img
                   src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg"

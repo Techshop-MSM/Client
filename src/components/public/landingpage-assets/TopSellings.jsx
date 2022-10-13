@@ -14,7 +14,7 @@ export function TopSellings() {
             <div className='row'>
                 <h2 style={{textAlign: 'center'}} className='topunderline'>Top Selling !</h2>
                 <hr/>
-                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
+                <div className='col-lg-3 col-md-6 col-sm-6 mb-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -47,7 +47,7 @@ export function TopSellings() {
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
+                <div className='col-lg-3 col-md-6 col-sm-6 mb-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -80,7 +80,7 @@ export function TopSellings() {
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
+                <div className='col-lg-3 col-md-6 col-sm-6 mb-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>
@@ -113,7 +113,7 @@ export function TopSellings() {
                         </div>
                     </div>
                 </div>
-                <div className='col-lg-3' style={{minHeight: '600px',   position: 'relative'}}>
+                <div className='col-lg-3 col-md-6 col-sm-6 mb-3' style={{minHeight: '600px',   position: 'relative'}}>
                     <div className='cardcontainer' style={{backgroundColor: 'hsla(350,50%,50%,0.0)'}}>
                         <div className='photo'>
                             <img src='https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg' className='img-fluid'></img>

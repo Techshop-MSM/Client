@@ -1,6 +1,36 @@
-body{
-  color: #fff !important;
+/*AUTOMATIC DARKMODE*/
+
+.day {
+  background: rgb(255, 255, 255) !important;
+  color: black !important;
 }
+.night {
+  background: #212529 !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .day.dark-scheme {
+    background: #212529 !important;
+    color: white !important;
+  }
+  .night.dark-scheme {
+    background: black !important;
+    color: #ddd !important;
+  }
+}
+
+@media (prefers-color-scheme: day) {
+  .day.light-scheme {
+    background: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+  }
+  .night.light-scheme {
+    background: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+  }
+}
+
 
 th{
   color: red;
@@ -88,24 +118,17 @@ td{
     }
   }
 
-
-  body {
-    padding-top: 0rem;
-}
-
 /*CARD-CONTAINER*/
 .cardcontainer {
     width: 99%;
     height: 100%;
     background-color: white;
     transition: 0.1s;
-    color: #fff;
     border: 1px solid red
 }
 
 .cardcontainer:hover {
     box-shadow: 0 0 20px rgb(255, 0, 0);
-    color: #fff;
     border: none;
 }
 
@@ -4721,6 +4744,33 @@ input::placeholder {
 }
 
 
+/*WISHLIST*/
+.wl-outborder{
+  border: 1px rgba(255, 0, 0, 0.35) solid
+}
+.wl-outborder:hover{
+  box-shadow: rgba(255, 0, 0, 0.35) 0px -30px 100px -28px inset, rgba(0, 0, 0, 0.15) 10.95px 10.95px 11.6px
+}
+
+
+.sticky{
+  position: sticky;
+   top: 0; 
+   z-index: 600000000;
+   
+}
+
+
+
+/*MEGATEST*/
+.test{
+    flex-direction: column-reverse !important;
+}
+
+
+.center {
+  margin: 0% 20% auto;
+}
 /*-------- Ratings --------*/
 
 label.rating:before{
@@ -4753,3 +4803,4 @@ label.rating:before{
     list-style: none;
     padding-left: 0.5rem;
   }
+

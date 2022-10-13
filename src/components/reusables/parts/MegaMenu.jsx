@@ -1,177 +1,131 @@
-import Navbar from 'react-bootstrap/Navbar'
+import {Popover , OverlayTrigger,  Col, Container, Row, Button, ButtonGroup, ButtonToolbar, Card,Form,Tabs,ListGroup, Table, Accordion, Tab, InputGroup, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import Tooltip from 'react-bootstrap/Tooltip';
+import { ComparingModal } from './ComparingModal';
 
 export function MegaMenu() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container-fluid">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#main_nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <>
+    <Container className='sticky' fluid style={{backgroundColor: 'red', height: '55px'}}>
+      <Row>
+        <Col lg={12} className='pt-2'>
+        {['bottom'].map((placement) => (
+        <OverlayTrigger
+          trigger="click"
+          key={placement}
+          placement={placement}
+          style={{display: 'inline-block'}}
+          overlay={
+            <Popover id={`popover-positioned-${placement}`}>
+              <Popover.Header style={{width: '80vmax'}} ></Popover.Header>
+              <Popover.Body style={{ backgroundColor: '#fff', width: '80vmax'}}>
+              <ButtonToolbar aria-label="Toolbar with button groups">
+
+
+              <Container className='border'>
+                <Row>
+                  <Col className='border'>1 of 2</Col>
+                  <Col className='border'>2 of 2</Col>
+                </Row>
+                <Row>
+                  <Col className='border'>1 of 3</Col>
+                  <Col className='border'>2 of 3</Col>
+                  <Col className='border'>3 of 3</Col>
+                </Row>
+              </Container>
+
+
+
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button href='/shop'>Shop</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                </ButtonToolbar>
+                <br></br>
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                </ButtonToolbar>
+                <br></br>
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="First group">
+                    <Button>1</Button> <Button>2</Button> <Button>3</Button>{' '}
+                    <Button>4</Button>
+                  </ButtonGroup>
+                  <ButtonGroup className="me-2" aria-label="Second group">
+                    <Button>5</Button> <Button>6</Button> <Button>7</Button>
+                  </ButtonGroup>
+                  <ButtonGroup aria-label="Third group">
+                    <Button>8</Button>
+                  </ButtonGroup>
+                </ButtonToolbar>
+              </Popover.Body>
+            </Popover>
+          }
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="main_nav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              {' '}
-              <a className="nav-link" href="#">
-                Home{' '}
-              </a>{' '}
-            </li>
-            <li className="nav-item active">
-              {' '}
-              <a className="nav-link" href="#">
-                Home{' '}
-              </a>{' '}
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                {' '}
-                About{' '}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                {' '}
-                Services{' '}
-              </a>
-            </li>
-            <li className="nav-item dropdown has-megamenu">
-              <div
-                className="nav-link dropdown-toggle testhover"
-                href="#"
-                data-bs-toggle="dropdown"
-              >
-                {' '}
-                Mega menu
-                <div className="dropdown-menu megamenu" role="menu">
-                  <div className="row g-3">
-                    <div className="col-lg-3 col-6">
-                      <div className="col-megamenu">
-                        <h6 className="title">Title Menu One</h6>
-                        <ul className="list-unstyled">
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom Menu</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>{' '}
-              </div>
-            </li>
-            <li className="nav-item dropdown has-megamenu">
-              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                {' '}
-                2. Mega{' '}
-              </a>
-              <div className="dropdown-menu megamenu" role="menu">
-                <div className="row g-3">
-                  <div className="col-lg-3 col-6">
-                    <div className="col-megamenu">
-                      <h6 className="title">Mega eins</h6>
-                      <ul className="list-unstyled">
-                        <li>
-                          <a href="#">Testmenu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-6">
-                    <div className="col-megamenu">
-                      <h6 className="title">Title Menu Two</h6>
-                      <ul className="list-unstyled">
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                        <li>
-                          <a href="#">Custom Menu</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul className="navbar-nav ms-auto">
-            <button
-              type="button"
-              className="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#comparingModal"
-            >
-              Vergleichsmodal-Platzhalter
-            </button>
-            <li className="nav-item dropdown">
-              <a className="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                {' '}
-                Kundeninformationen{' '}
-              </a>
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    {' '}
-                    Datenschutz
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    {' '}
-                    Impressum{' '}
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+          <Button         
+             className="hvr-rectangle-out testbtn btn"
+             variant="secondary">Popover on {placement}
+          </Button>
+        </OverlayTrigger>
+      ))}
+
+
+      <div style={{display: 'inline-block'}} className='center'>
+        <img style={{display: 'inline-block'}} src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.png" alt="" width={50}/>
+        <img style={{display: 'inline-block'}} src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.png" alt="" width={50}/>
+        <img style={{display: 'inline-block'}} src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.png" alt="" width={50}/>
+        <img style={{display: 'inline-block'}} src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.png" alt="" width={50}/>
+        <img style={{display: 'inline-block'}} src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.png" alt="" width={50}/>
       </div>
-    </nav>
-  )
+
+      <ComparingModal/>
+      </Col>
+      </Row>
+      </Container>
+    </>
+  );
 }
