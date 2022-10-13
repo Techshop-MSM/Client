@@ -51,7 +51,7 @@ export const DataProvider = ({ children }) => {
   }, [category])
 
   return (
-    <DataContext.Provider value={{ category, setCategory, articles, setArticles }}>
+    <DataContext.Provider value={{ category, setCategory, articles, setArticles, compare, setCompare }}>
       {children}
     </DataContext.Provider>
   )
