@@ -45,13 +45,14 @@ export const DataProvider = ({ children }) => {
     saveInLocalStorage('cat', category)
     saveInLocalStorage('articles', articles)
   }, [category, articles, compare])
+ 
 
   useEffect(() => {
     setCompare([])
   }, [category])
 
   return (
-    <DataContext.Provider value={{ category, setCategory, articles, setArticles }}>
+    <DataContext.Provider value={{ category, setCategory, articles, setArticles, compare, setCompare }}>
       {children}
     </DataContext.Provider>
   )
