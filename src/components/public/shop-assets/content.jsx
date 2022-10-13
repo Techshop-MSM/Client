@@ -19,6 +19,7 @@ export const ShopContent = () => {
   }, [compare])
 
   const onCompareHandler = (id) => {
+
     compare?.length < 3 ? setCompare([...compare, id]) : console.log('compare is full')
   }
 

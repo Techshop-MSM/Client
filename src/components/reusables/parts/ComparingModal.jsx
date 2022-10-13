@@ -69,7 +69,6 @@ export function ComparingModal() {
               </div>
             </div>
           </div>
-
           <div className="modal-footer bg-dark">
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {setItems([]), setLgShow(!lgShow)}}>
               Close

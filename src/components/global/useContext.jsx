@@ -45,7 +45,6 @@ export const DataProvider = ({ children }) => {
     saveInLocalStorage('cat', category)
     saveInLocalStorage('articles', articles)
   }, [category, articles, compare])
- 
 
   useEffect(() => {
     setCompare([])
