@@ -12,7 +12,6 @@ import { Megatest } from '../reusables/parts/Megatest'
 export const Home = () => {
   return (
     <>
-      <Megatest/>
       <TopCarousel />
       <TopSellings />
       <ActionImg />

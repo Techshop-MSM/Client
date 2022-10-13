@@ -92,8 +92,8 @@ export function Footer() {
         </Col>
       </Row>
     </Container>
-    <footer className="py-5 container">
-      <div className="row">
+    <footer className="py-5 container" style={{color: 'red'}}>
+      <div className="row" style={{backgroundColor: 'rgb(050, 050, 050, 0.3)'}}>
         <div className="col-lg-3">
           <img src="https://www.alternate.de/resources/pix/footer/PayPal_logo.svg" alt="" />
         </div>
@@ -118,28 +118,28 @@ export function Footer() {
         <div className="col-6 col-md-2 mb-3">
           <h5>Section</h5>
           <ul className="nav flex-column">
-            <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+            <li className="nav-item mb-2" >
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 About
               </a>
             </li>
@@ -150,27 +150,27 @@ export function Footer() {
           <h5>Section</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Home
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 About
               </a>
             </li>
@@ -184,22 +184,22 @@ export function Footer() {
               <ImpressumDatenschutz />
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0 day">
                 Features
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 Pricing
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 FAQs
               </a>
             </li>
             <li className="nav-item mb-2">
-              <a href="#" className="nav-link p-0 text-muted">
+              <a href="#" className="nav-link p-0" style={{color: '#fff'}}>
                 About
               </a>
             </li>

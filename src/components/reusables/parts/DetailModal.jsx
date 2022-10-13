@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
-import { Button, Container, Col, Row, Form, Modal, Tabs, Tab } from 'react-bootstrap'
+import React, { useContext, useState } from 'react'
+import {  Modal } from 'react-bootstrap'
+import { DataContext } from '../../global/useContext'
+import { randomNumber } from '../../public/shop-assets/randomNumber'
 
 export function DetailModal() {
+  const { category } = useContext(DataContext)
   const [lgShow, setLgShow] = useState(false)
+  // console.log(props)
   return (
     <>
       <button
@@ -22,18 +26,23 @@ export function DetailModal() {
         aria-labelledby="example-modal-sizes-title-lg"
         className="bg-dark"
       >
-        <Modal.Header  className="bg-dark border"> 
+        <Modal.Header className="bg-dark border">
           <Modal.Title id="example-modal-sizes-title-lg">Produktdetails</Modal.Title>
-          <button type="button" class="btn-close btn-close-white" aria-label="Close" onClick={() => setLgShow(false)} />
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            aria-label="Close"
+            onClick={() => setLgShow(false)}
+          />
         </Modal.Header>
         <Modal.Body>
           <div className="p-5 bg-dark">
             <img
-              src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg"
+              src={`../../../../public/images/${category}/${category}_${randomNumber()}.jpeg`}
               width="53%"
               alt=""
             />
-            <table class="table" >
+            <table className="table">
               <tbody>
                 <tr>
                   <th>Formfaktor:</th>
@@ -56,72 +65,6 @@ export function DetailModal() {
                     <br />
                     Max. 64 GB
                   </td>
-                </tr>
-                <tr>
-                  <th>Slots (physisch):</th>
-                  <td>1x PCIe 5.0 x16</td>
-                </tr>
-                <tr>
-                  <th>Interne Anschlüsse:</th>
-                  <td>
-                    4x SATA 6G
-                    <br />
-                    1x M.2 (PCIe 4.0 x4, 2260, 2280, CPU)
-                    <br />
-                    1x M.2 (PCIe 4.0 x4, 2242-2280, Chipsatz)
-                    <br />
-                    1x USB-C (ein Header, USB 3.2 Gen 2, max. 10 Gbit/s)
-                    <br />
-                    2x USB 3.0 (ein Header, USB 3.2 Gen 1, max. 5 Gbit/s)
-                    <br />
-                    2x USB 2.0 (ein Header, max. 480 Mbit/s)
-                    <br />
-                    1x Front Panel Audio Header (AAFP)
-                    <br />
-                    1x S/PDIF Out Header
-                    <br />
-                    1x Speaker Header 1x 10-1 pin System Panel Header
-                    <br />
-                    1x Clear CMOS Header
-                  </td>
-                  <br />
-                </tr>
-                <tr>
-                  <th>Lüfter-Header:</th>
-                  <td>
-                    1x CPU-Fan (4-Pin)
-                    <br />
-                    1x CPU-Fan OPT (4-Pin)
-                    <br />
-                    1x Pumpe (4-Pin)
-                  </td>
-                </tr>
-                <tr>
-                  <th>Externe Anschlüsse:</th>
-                  <td>
-                    1x USB 3.2 Typ C (USB 3.2 Gen 2x2, max. 20 Gbit/s)
-                    <br />
-                    1x USB 3.0 Typ C (USB 3.1 Gen 1, max. 5 Gbit/s)
-                    <br />
-                    3x USB 3.0 Typ A (USB 3.1 Gen 1, max. 5 Gbit/s)
-                    <br />
-                    3x USB 2.0 (max. 480 Mbit/s)
-                    <br />
-                    1x DisplayPort 1.4
-                    <br />
-                    1x HDMI 2.1
-                    <br />
-                    2x WLAN-Antenne (WiFi 6, WLAN ax, 2x2, Bluetooth 5.2)
-                    <br />
-                    1x RJ-45 (Intel I225-V, max. 2,5 Gbit/s)
-                    <br />
-                    5x 3,5 mm Klinke (Realtek ALC1220/?ASUS SupremeFX)
-                  </td>
-                  <br />
-                </tr>
-                <tr>
-                  <th>Herstellergarantie:</th>
-                  <td>3 Jahre</td>
                 </tr>
               </tbody>
             </table>
