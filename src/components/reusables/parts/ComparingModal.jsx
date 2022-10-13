@@ -1,37 +1,38 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Button, Container, Col, Row, Form, Modal, Tabs, Tab } from 'react-bootstrap'
 import { DataContext } from '../../global/useContext'
+import { createCompare } from './createCompare'
 import { getDetails } from './getDetails'
 
 export function ComparingModal() {
-  const { articles, category, compare, setCompare } = useContext(DataContext)
+  const { articles, compare, setCompare, category } = useContext(DataContext)
   const [lgShow, setLgShow] = useState(false)
+  const [items, setItems] = useState([])
 
-  //const findArr = [1, 2, 3]
-  //const searchArr = [
-    //{ id: 1, name: 'Martin' },
-    //{ id: 2, name: 'Marc' },
-    //{ id: 3, name: 'Sven' },
-    //{ id: 4, name: 'Ben' },
-  //]
+  useEffect(() => {
+    console.log(items)
+  }, [items])
 
-  // findArr.map((item, i) => {
-  //   searchArr.find(item => {
-  //     return item
-  //   })
-  // })
-
-  //const newArr = searchArr.filter(findArr[0])
-  //console.log(newArr)
+  compare &&
+  compare.map((item, i) => {
+    items.push(articles.find((elem) => elem._id == item))
+    setCompare([])
+  })
 
   return (
-    <> <Button variant="secondary"
-        type="button"
-        className="hvr-rectangle-out testbtn btn"
-        onClick={() => setLgShow(true)}
-      >
-        <img src="../../../../public/images/compare.svg" alt="" style={{ height: '20px' }}/>
-      </Button>
+    <>
+      {items.length > 0 && (
+        <button
+          type="button"
+          className="hvr-rectangle-out testbtn btn btn-sm"
+          onClick={() => setLgShow(true)}
+          style={{
+            marginTop: '10px',
+          }}
+        >
+          <img src="../../../../public/images/compare.svg" alt="" style={{ width: '2rem' }} />
+        </button>
+      )}
       <Modal
         size="xl"
         show={lgShow}
@@ -48,36 +49,28 @@ export function ComparingModal() {
           />
         </Modal.Header>
         <Modal.Body>
-          <div id="myDIV" onscroll="myFunction()">
+          <div id="myDIV" onScroll={() => myFunction()}>
             <div id="content">
-              <div style={{ maxWidth: '33%', display: 'inline-block' }} className="day dark-scheme">
+              <div
+                style={{
+                  maxWidth: '100%',
+                  height: '60vh',
+                  display: 'inline-block',
+                  padding: '1rem',
+                }}
+                className="day dark-scheme"
+              >
                 <img
                   src="https://image1280.macovi.de/images/product_images/1280/1317274_0__73140.jpg"
-                  width="33%"
+                  width="20%"
                   alt=""
                 />
-                <table className="table">
-                  <tbody>
-                    <tr>
-                      <th>Formfaktor:</th>
-                      <td>Mini-ITX (170 × 170 mm)</td>
-                    </tr>
-                    <tr>
-                      <td>Chipsatz:</td>
-                      <td> Intel B660</td>
-                    </tr>
-                    <tr>
-                      <td>Sockel:</td>
-                      <td>1700 (für Intel-CPUs der 12. Core-Generation)</td>
-                    </tr>
-                  </tbody>
-                </table>
+                {createCompare(items)}
               </div>
             </div>
           </div>
-
-          <div class="modal-footer bg-dark">
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+          <div className="modal-footer bg-dark">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {setItems([]), setLgShow(!lgShow)}}>
               Close
             </button>
           </div>

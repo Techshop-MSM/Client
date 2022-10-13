@@ -332,16 +332,14 @@ td{
 
 /*VERGLEICHSMODAL*/
 #myDIV {
-    height: 100%;
+    height: 80%;
     width: 100%;
     overflow: auto;
 }
 
 #content {
-    height: 1000px;
     width: 1980px;
     background-color: #fff;
-    ;
 }
 
 .comparing-bg {
