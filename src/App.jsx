@@ -29,7 +29,7 @@ import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { Tasks } from './components/manager/admin/tasks'
 import { Megatest } from './components/reusables/parts/Megatest'
 
-export const backendURL = 'http://localhost:5500'
+export const backendURL = 'https://dci-final-project.cyclic.app'
 
 function App() {
   return (
