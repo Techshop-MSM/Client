@@ -11,7 +11,7 @@ import { rating } from './ratingHandler'
 
 export const ShopContent = () => {
   const { articles, category, compare, setCompare } = useContext(DataContext)
-  const img = '../../../../public/images'
+  const img = 'images'
 
   useEffect(() => {
     console.log(compare)
@@ -46,10 +46,7 @@ export const ShopContent = () => {
                     {article.baseData.stock ? 'Lieferbar' : 'ausverkauft'}
                   </div>
                 </div>
-                <div
-                  className="content"
-                  style={{ width: '100%', margin: '0.5rem 0' }}
-                >
+                <div className="content" style={{ width: '100%', margin: '0.5rem 0' }}>
                   <div className="d-flex flex-wrap" style={{ paddingBottom: '1rem' }}>
                     {rating ? (
                       <form style={{ width: '100%', textAlign: 'center' }}>
@@ -89,11 +86,7 @@ export const ShopContent = () => {
                         marginTop: '10px',
                       }}
                     >
-                      <img
-                        src="../../../../public/images/compare.svg"
-                        alt=""
-                        style={{ width: '2rem' }}
-                      />
+                      <img src="images/compare.svg" alt="" style={{ width: '2rem' }} />
                     </button>
                     {/* <Whishlist /> */}
                     <button
@@ -102,14 +95,10 @@ export const ShopContent = () => {
                         marginTop: '10px',
                       }}
                     >
-                      <img
-                        src="../../../../public/images/shopBasket.svg"
-                        alt=""
-                        style={{ width: '2rem' }}
-                      />
+                      <img src="images/shopBasket.svg" alt="" style={{ width: '2rem' }} />
                     </button>
                   </Col>
-                   {getDetails(article, category)}
+                  {getDetails(article, category)}
                 </div>
               </div>
             </Col>

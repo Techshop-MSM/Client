@@ -14,10 +14,17 @@ export function ComparingModal() {
   }, [items])
 
   compare &&
+<<<<<<< HEAD
     compare.map((item) => {
       items.push(articles.find((elem) => elem._id == item))
       setCompare([])
     })
+=======
+  compare.map((item, i) => {
+    items.push(articles.find((elem) => elem._id == item))
+    setCompare([])
+  })
+>>>>>>> 2a60bf70ca65acdd1655229835a78c8200b3a551
 
   return (
     <>
@@ -65,11 +72,16 @@ export function ComparingModal() {
                   width="20%"
                   alt=""
                 />
+<<<<<<< HEAD
                 {createCompare(items, category)}
+=======
+                {createCompare(items)}
+>>>>>>> 2a60bf70ca65acdd1655229835a78c8200b3a551
               </div>
             </div>
           </div>
           <div className="modal-footer bg-dark">
+<<<<<<< HEAD
             <button
               type="button"
               className="btn btn-secondary"
@@ -78,6 +90,9 @@ export function ComparingModal() {
                 setItems([]), setLgShow(!lgShow)
               }}
             >
+=======
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {setItems([]), setLgShow(!lgShow)}}>
+>>>>>>> 2a60bf70ca65acdd1655229835a78c8200b3a551
               Close
             </button>
           </div>
