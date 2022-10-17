@@ -15,7 +15,7 @@ export const Shop = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: 'red', margin: 'auto', padding: '0.5rem' }}>
+      {/* <div style={{ backgroundColor: 'red', margin: 'auto', padding: '0.5rem' }}>
         <button onClick={() => setCategory('ram')}>ARBEITSSPEICHER</button>
         <span style={{ padding: '0.1rem' }}></span>
         <button onClick={() => setCategory('case')}>GEHÄUSE</button>
@@ -32,7 +32,7 @@ export const Shop = () => {
         <span style={{ padding: '0.1rem' }}></span>
         <button onClick={() => setCategory('soundCard')}>SOUNDKARTE</button>
         <ComparingModal />
-      </div>
+      </div> */}
       <Filter />
       <ShopContent />
     </>

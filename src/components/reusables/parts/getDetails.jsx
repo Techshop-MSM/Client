@@ -51,9 +51,9 @@ export const getDetails = (art, category) => {
       return (
         <ul className="details">
           <li className="detailsKey">Type</li>
-          <li className="detailsValue">{art.typeModelVersion[0]}</li>
+          {art.typeModelVersion && <li className="detailsValue">{ art.typeModelVersion[0]}</li>}
           <li className="detailsKey">Model</li>
-          <li className="detailsValue">{art.typeModelVersion[1]}</li>
+          {art.typeModelVersion && <li className="detailsValue">{art.typeModelVersion[1]}</li>}
           <li className="detailsKey">Formfaktor</li>
           <li className="detailsValue">{art.form}</li>
           <li className="detailsKey">max. Speicher</li>

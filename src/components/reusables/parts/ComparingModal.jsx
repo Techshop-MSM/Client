@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react'
 import { Button, Container, Col, Row, Form, Modal, Tabs, Tab } from 'react-bootstrap'
 import { DataContext } from '../../global/useContext'
 import { createCompare } from './createCompare'
-import { getDetails } from './getDetails'
 
 export function ComparingModal() {
   const { articles, compare, setCompare, category } = useContext(DataContext)
