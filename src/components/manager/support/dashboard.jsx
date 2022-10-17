@@ -3,10 +3,12 @@ import { Container, Col, Row } from 'react-bootstrap'
 import io from 'socket.io-client'
 import { backendURL } from '../../../App'
 import { AppContext } from '../../global/useContext'
+import { Tickets } from './tickets'
 
 const chatRequests = [
   {
     user: 123,
+    date: '17.10.2022',
     messages: [
       'Hallo ich habe folgendes Problem:',
       'ich habe mir gerade die Grafikkarte mit der artikelNr: 23759 bestellt und habe nun festgestellt, dass die Lieferaddresse falsch ist.',
@@ -16,21 +18,24 @@ const chatRequests = [
   },
   {
     user: 373,
+    date: '18.10.2022',
     messages: [
       'hey ein Freund und ich hatten für seinen PC einen Arbeitsspeicher bestellt, jedoch ist der falsche gekommen, bitte um klärung, Danke!',
-    ],
-    status: true,
-  },
-  {
-    user: 107,
-    messages: [
-      'Hallo ich habe eine allgemeine Frage zum Thema CPU.',
-      'Ich suche eine passende CPU für mein neues Mainboard, das Z590 von Gigabyte.',
     ],
     status: false,
   },
   {
-    user: 373,
+    user: 107,
+    date: '18.10.2022',
+    messages: [
+      'Hallo ich habe eine allgemeine Frage zum Thema CPU.',
+      'Ich suche eine passende CPU für mein neues Mainboard, das Z590 von Gigabyte.',
+    ],
+    status: true,
+  },
+  {
+    user: 293,
+    date: '17.10.2022',
     messages: [
       'Hey ich habe eine Frage zum Thema Mainboards',
       'Wenn da Kompatibel mit DD4 steht, heißt das 4 und älter? Würde mein DDR3 Speicher passen?',
@@ -38,32 +43,6 @@ const chatRequests = [
     status: false,
   },
 ]
-
-const messagePreview = (arr) => {
-  return arr.map((request, i) => (
-    <a
-      href="#"
-      className="list-group-item list-group-item-action list-group-item-light rounded-0"
-      key={i}
-      onClick={() => createChat(request)}
-    >
-      <div className="media">
-        <div className="media-body ml-4">
-          <div className="d-flex align-items-center justify-content-between mb-1">
-            <h6 className="mb-0">{request.user}</h6>
-            <small className="small font-weight-bold">25 Dec</small>
-          </div>
-          <p
-            className="font-italic mb-0 text-small"
-            style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
-          >
-            {request.messages.join(' ')}
-          </p>
-        </div>
-      </div>
-    </a>
-  ))
-}
 
 export const DashboardSupport = () => {
   const { token, userData } = useContext(AppContext)
@@ -78,8 +57,9 @@ export const DashboardSupport = () => {
   useEffect(() => {
     chatRequests.map((request) => {
       request.status ? setPending([...pending, request]) : setOpen([...open, request])
+      console.log(request.status)
     })
-  }, [])
+  }, [status])
 
   //setStatus(...status, pending + open)
 
@@ -143,7 +123,7 @@ export const DashboardSupport = () => {
   //console.log('SocketMSG', socketMessages)
 
   return (
-    <Container>
+    <Container className="day dark-scheme bg-dark">
       <Row>
         <Col lg={4} style={{ padding: '0.5rem' }}>
           <div className="row rounded-lg overflow-hidden shadow">
@@ -154,7 +134,9 @@ export const DashboardSupport = () => {
                   <p className="h5 mb-0 py-1">Supportanfragen in Bearbeitung</p>
                 </div>
                 <div className="messages-box">
-                  <div className="list-group rounded-0">{() => messagePreview(status)}</div>
+                  <div className="list-group rounded-0" style={{ overflow: 'hidden' }}>
+                    {open && Tickets(open)}
+                  </div>
                 </div>
               </div>
             </div>
@@ -164,8 +146,8 @@ export const DashboardSupport = () => {
                 <div className="bg-gray px-4 py-2 bg-success">
                   <p className="h5 mb-0 py-1">Offene Supportanfragen</p>
                 </div>
-                <div className="messages-box">
-                  <div className="list-group rounded-0">{() => messagePreview(status)}</div>
+                <div className="messages-box border">
+                  <div className="list-group rounded-0">{pending && Tickets(pending)}</div>
                 </div>
               </div>
             </div>

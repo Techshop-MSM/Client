@@ -146,11 +146,11 @@ export function Megatest() {
           <Navbar.Text style={{paddingRight: '10px'}}>
             <div style={{marginLeft: '20px', marginTop: '10px'}}>
               <div style={{padding: '5px', border: '1px solid #fff', borderRadius: '100%', display: 'inline-block', marginRight: '10px', marginBottom: '10px'}}>
-                <i class="fab fa-facebook-f"></i>   
+                <i className="fab fa-facebook-f"></i>   
               </div>
 
               <div style={{padding: '5px', border: '1px solid #fff', borderRadius: '100%', display: 'inline-block'}}>
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </div>
             </div>
           </Navbar.Text>

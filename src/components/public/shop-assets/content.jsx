@@ -29,7 +29,6 @@ export const ShopContent = () => {
             <Col xl={3} lg={4} md={6} className="mt-4" key={`Container_${i}`}>
               <div
                 className="cardcontainer"
-                key={i}
                 style={{
                   backgroundColor: 'hsla(350,50%,50%,0.0)',
                   height: '30rem',
@@ -38,7 +37,7 @@ export const ShopContent = () => {
                   overflow: 'hidden',
                 }}
               >
-                <div key={`a_{i}`} className="photo">
+                <div className="photo">
                   <img
                     src={`${img}/${category}/${category}_${randomNumber()}.jpeg`}
                     className="img-fluid"
@@ -48,7 +47,6 @@ export const ShopContent = () => {
                   </div>
                 </div>
                 <div
-                  key={`b_{i}`}
                   className="content"
                   style={{ width: '100%', margin: '0.5rem 0' }}
                 >
@@ -83,7 +81,7 @@ export const ShopContent = () => {
                       right: '-15.1rem',
                     }}
                   >
-                    <DetailModal />
+                    {/* <DetailModal /> */}
                     <button
                       onClick={() => onCompareHandler(article._id)}
                       className="hvr-rectangle-out testbtn btn btn-sm"
@@ -97,7 +95,7 @@ export const ShopContent = () => {
                         style={{ width: '2rem' }}
                       />
                     </button>
-                    <Whishlist />
+                    {/* <Whishlist /> */}
                     <button
                       className="hvr-rectangle-out testbtn btn btn-sm"
                       style={{
@@ -111,7 +109,7 @@ export const ShopContent = () => {
                       />
                     </button>
                   </Col>
-                  {getDetails(article)}
+                   {getDetails(article, category)}
                 </div>
               </div>
             </Col>

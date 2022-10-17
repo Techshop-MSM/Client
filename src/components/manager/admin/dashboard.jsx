@@ -57,7 +57,7 @@ export const DashboardAdmin = () => {
 
   const selectField = () => {
     return (
-      <select name="" id="" onChange={cat} style={{ width: '40%', padding: '0.2rem 0.5rem' }}>
+      <select name="" id="" onChange={cat} className="" style={{ width: '40%', padding: '0.2rem 0.5rem' }}>
         <option>Kategorie wählen...</option>
         <option value="case">Gehäuse</option>
         <option value="cpu">CPU</option>
@@ -89,7 +89,7 @@ export const DashboardAdmin = () => {
   }
 
   return (
-    <Container>
+    <Container className="bg-dark">
       <Row>
         <Col>
           <form onSubmit={onSubmit} style={{ textAlign: 'center', borderBottom: 'solid' }}>

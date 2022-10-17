@@ -54,7 +54,7 @@ export const Login = () => {
       <input type="text" placeholder="Username/E-Mail" ref={loginRef} id="name" />
       <label htmlFor="pw">Passwort</label>
       <input type="password" placeholder="Passwort" ref={passwordRef} id="pw" />
-      <input type="submit" value="Login du Sau" />
+      <input type="submit" value="Login" />
     </form>
   )
 }

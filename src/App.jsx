@@ -29,51 +29,51 @@ import { DashboardAdmin } from './components/manager/admin/dashboard'
 import { Tasks } from './components/manager/admin/tasks'
 import { Megatest } from './components/reusables/parts/Megatest'
 
-export const backendURL = 'http://localhost:5500'
+export const backendURL = 'https://dci-final-project.cyclic.app/' //'http://localhost:5500'
 
 function App() {
   return (
-    <main className="App">
+    <main className="App day dark-scheme text-white">
       <Topmenu />
-      <Megatest/>
+      <Megatest />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/basket" element={<Basket />} />
 
-                {/* PROTECTED ROUTES - /user */}
-                <Route
-                    path="/dashboard"
-                    element={
-                        <PrivateRoute>
-                            <Dashboard />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/wishlist"
-                    element={
-                        <PrivateRoute>
-                            <Wishlist />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/profile"
-                    element={
-                        <PrivateRoute>
-                            <Profile />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/invoices"
-                    element={
-                        <PrivateRoute>
-                            <Invoices />
-                        </PrivateRoute>
-                    }
-                />
+        {/* PROTECTED ROUTES - /user */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <PrivateRoute>
+              <Wishlist />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/invoices"
+          element={
+            <PrivateRoute>
+              <Invoices />
+            </PrivateRoute>
+          }
+        />
 
         {/* PROTECTED ROUTES - /manger/support */}
         <Route

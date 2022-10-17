@@ -1,5 +1,3 @@
-import { useContext, useEffect } from 'react'
-import { AppContext, DataContext } from './useContext'
 import { backendURL } from '../../App'
 
 export const databaseManager = async ({

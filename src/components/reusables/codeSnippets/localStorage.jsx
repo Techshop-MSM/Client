@@ -1,11 +1,13 @@
 export const saveInLocalStorage = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value))
+  key != 'auth'
+    ? localStorage.setItem(key, JSON.stringify(value))
+    : localStorage.setItem(key, value)
 }
 
 export const deleteInLocalStorage = (key) => {
-    localStorage.removeItem(key)
+  localStorage.removeItem(key)
 }
 
 export const getFromLocalStorage = (key) => {
-    localStorage.getItem(key)
+  return localStorage.getItem(key)
 }

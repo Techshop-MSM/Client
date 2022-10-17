@@ -10,11 +10,11 @@ export function ComparingModal() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    console.log(items)
+    //console.log(items)
   }, [items])
 
   compare &&
-    compare.map((item, i) => {
+    compare.map((item) => {
       items.push(articles.find((elem) => elem._id == item))
       setCompare([])
     })
@@ -65,7 +65,7 @@ export function ComparingModal() {
                   width="20%"
                   alt=""
                 />
-                {createCompare(items)}
+                {createCompare(items, category)}
               </div>
             </div>
           </div>

@@ -1,33 +1,44 @@
-import { useContext } from 'react'
-import { DataContext } from '../../global/useContext'
-
-export const createCompare = (items) => {
-  const { category } = useContext(DataContext)
-    console.log("ITEMS", items)
+export const createCompare = (items, category) => {
   switch (category) {
     case 'case':
       return (
         <table className="d-flex" style={{ width: '100%', color: 'red' }}>
-          <thead className="d-flex" style={{flexDirection: 'column'}}>
-            <th scope="row" style={{ width: '10rem'}}>Type</th>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Type</th>
             <th scope="row">Farbe</th>
             <th scope="row">Drive</th>
             <th scope="row">Netzteil</th>
           </thead>
           {items &&
             items.map((item, i) => (
-              <tbody className="d-flex border" style={{flexDirection: 'column'}}>
+              <tbody key={`a${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
                 <tr>
-                  <td key={`a${i}`}>{item.type}</td>
+                  <td>{item.baseData.articleName}</td>
                 </tr>
                 <tr>
-                  <td key={`b${i}`}>{item.color}</td>
+                  <td>{item.baseData.ratings ? item.baseData.ratings : 'noch nicht ermittelt'}</td>
                 </tr>
                 <tr>
-                  <td key={`c${i}`}>{item.drive}</td>
+                  <td>{item.baseData.articleNr}</td>
                 </tr>
                 <tr>
-                  <td key={`d${i}`}>{item.powerSupply}</td>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.type}</td>
+                </tr>
+                <tr>
+                  <td>{item.color}</td>
+                </tr>
+                <tr>
+                  <td>{item.drive}</td>
+                </tr>
+                <tr>
+                  <td>{item.powerSupply ? item.powerSupply : 'nicht enthalten'}</td>
                 </tr>
               </tbody>
             ))}
@@ -36,102 +47,327 @@ export const createCompare = (items) => {
       break
     case 'cpu':
       return (
-        <tr>
-          <td>Type</td>
-          <td>{art.cpuTyp}</td>
-          <td>Model</td>
-          <td>{art.model}</td>
-          <td>Sockel</td>
-          <td>{art.socket}</td>
-          <td>Kerne</td>
-          <td>{art.cores}</td>
-          <td>TDP</td>
-          <td>{art.tdp}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Type</th>
+            <th scope="row">Model</th>
+            <th scope="row">Sockel</th>
+            <th scope="row">Kerne</th>
+            <th scope="row">TDP</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`b_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.cpuTyp}</td>
+                </tr>
+                <tr>
+                  <td>{item.model}</td>
+                </tr>
+                <tr>
+                  <td>{item.socket}</td>
+                </tr>
+                <tr>
+                  <td>{item.cores}</td>
+                </tr>
+                <tr>
+                  <td>{item.tdp}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'gpu':
       return (
-        <tr>
-          <td>Type</td>
-          <td>{art.type}</td>
-          <td>Model</td>
-          <td>{art.model}</td>
-          <td>Chipsatz</td>
-          <td>{art.chip}</td>
-          <td>Speicher</td>
-          <td>{art.memory}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Type</th>
+            <th scope="row">Model</th>
+            <th scope="row">Chipsatz</th>
+            <th scope="row">Speicher</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`c_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.type}</td>
+                </tr>
+                <tr>
+                  <td>{item.model}</td>
+                </tr>
+                <tr>
+                  <td>{item.chip}</td>
+                </tr>
+                <tr>
+                  <td>{item.memory}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'mainboard':
       return (
-        <tr>
-          <td>Type</td>
-          <td>{art.typeModelVersion[0]}</td>
-          <td>Model</td>
-          <td>{art.typeModelVersion[1]}</td>
-          <td>Formfaktor</td>
-          <td>{art.form}</td>
-          <td>max. Speicher</td>
-          <td>{art.maxMemory}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Type</th>
+            <th scope="row">Model</th>
+            <th scope="row">Formfaktor</th>
+            <th scope="row">max. Speicher</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`d_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.typeModelVersion[0]}</td>
+                </tr>
+                <tr>
+                  <td>{item.typeModelVersion[1]}</td>
+                </tr>
+                <tr>
+                  <td>{item.form}</td>
+                </tr>
+                <tr>
+                  <td>{item.maxMemory}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'powerAdapter':
       return (
-        <tr>
-          <td style={{ width: '100%', backgroundColor: 'gold' }}>{art.effiClass}</td>
-          <td>Formfaktor</td>
-          <td>{art.form}</td>
-          <td>Leistung</td>
-          <td>{art.maxPower}</td>
-          <td>Effizienz</td>
-          <td>{`${art.efficiency}%`}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row"></th>
+            <th scope="row">Formfaktor</th>
+            <th scope="row">Leistung</th>
+            <th scope="row">Effizienz</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`e_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td style={{ width: '100%', backgroundColor: 'gold' }}>{item.effiClass}</td>
+                </tr>
+                <tr>
+                  <td>{item.form}</td>
+                </tr>
+                <tr>
+                  <td>{item.maxPower}</td>
+                </tr>
+                <tr>
+                  <td>{item.form}</td>
+                </tr>
+                <tr>
+                  <td>{item.efficiency}%</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'ram':
       return (
-        <tr>
-          <td>Form</td>
-          <td>{art.form}</td>
-          <td>Geschwindigkeit</td>
-          <td>{art.capacity}</td>
-          <td>Modtre</td>
-          <td>{art.modtres}</td>
-          <td>Farbe</td>
-          <td>{art.color}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Form</th>
+            <th scope="row">Geschwindigkeit</th>
+            <th scope="row">Modtre</th>
+            <th scope="row">Farbe</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`f_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.form}</td>
+                </tr>
+                <tr>
+                  <td>{item.capacity}</td>
+                </tr>
+                <tr>
+                  <td>{item.socket}</td>
+                </tr>
+                <tr>
+                  <td>{item.modtres}</td>
+                </tr>
+                <tr>
+                  <td>{item.color}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'storage':
       return (
-        <tr>
-          <td>Form</td>
-          <td>{art.form}</td>
-          <td>Type</td>
-          <td>{art.type}</td>
-          <td>Kapazität</td>
-          <td>{art.capacity}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Form</th>
+            <th scope="row">Type</th>
+            <th scope="row">Kapazität</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`g_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.form}</td>
+                </tr>
+                <tr>
+                  <td>{item.type}</td>
+                </tr>
+                <tr>
+                  <td>{item.capacity}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
     case 'soundcard':
       return (
-        <tr>
-          <td>Soundchip</td>
-          <td>{art.soundchip}</td>
-          <td>Kanäle</td>
-          <td>{art.channels}</td>
-          <td>Lautstärke</td>
-          <td>{art.audio}</td>
-          <td>Rate</td>
-          <td>{art.sampleRate}</td>
-        </tr>
+        <table className="d-flex" style={{ width: '100%', color: 'red' }}>
+          <thead className="d-flex" style={{ flexDirection: 'column' }}>
+            <th scope="row">Artikelname</th>
+            <th scope="row">Bewertung</th>
+            <th scope="row">Artikelnummer</th>
+            <th scope="row">Preis</th>
+            <th scope="row">Soundchip</th>
+            <th scope="row">Kanäle</th>
+            <th scope="row">Lautstärke</th>
+            <th scope="row">Rate</th>
+          </thead>
+          {items &&
+            items.map((item, i) => (
+              <tbody key={`h_${i}`} className="d-flex border" style={{ flexDirection: 'column' }}>
+                <tr>
+                  <td>{item.baseData.articleName}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.ratings}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.articleNr}</td>
+                </tr>
+                <tr>
+                  <td>{item.baseData.priceEK * 1.19 * 1.2}</td>
+                </tr>
+                <tr>
+                  <td>{item.soundchip}</td>
+                </tr>
+                <tr>
+                  <td>{item.channels}</td>
+                </tr>
+                <tr>
+                  <td>{item.audio}</td>
+                </tr>
+                <tr>
+                  <td>{item.sampleRate}</td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
       )
       break
 
-      defatrt: break
+    default:
+      break
   }
 }

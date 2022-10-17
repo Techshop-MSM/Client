@@ -11,13 +11,13 @@ export const DataContext = createContext()
 // ----------------- LS LOAD -----------------
 const tokenFromLS = getFromLocalStorage('auth')
 const userFromLS = getFromLocalStorage('user')
-console.log('LS LOAD', userFromLS, tokenFromLS)
+//console.log('LS LOAD', userFromLS, tokenFromLS)
 
 // ----------------- USER -----------------
 export const UserProvider = ({ children }) => {
   const [token, setToken] = useState(tokenFromLS || null)
-  // const [userData, setUserData] = useState(JSON.parse(user) || null)
-  const [userData, setUserData] = useState(userFromLS || null)
+  const [userData, setUserData] = useState(userFromLS ? JSON.parse(userFromLS) : null)
+  //const [userData, setUserData] = useState(userFromLS || null)
 
   // Handle userData and jwt-Token by change
   useEffect(() => {
@@ -25,8 +25,7 @@ export const UserProvider = ({ children }) => {
     token ? saveInLocalStorage('auth', token) : deleteInLocalStorage('auth')
     userData ? saveInLocalStorage('user', userData) : deleteInLocalStorage('user')
   }, [token])
-  console.log('user', userData)
-  console.log('token', token)
+  
 
   return (
     <AppContext.Provider value={{ token, setToken, userData, setUserData }}>
@@ -44,14 +43,16 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     saveInLocalStorage('cat', category)
     saveInLocalStorage('articles', articles)
-  }, [category, articles, compare])
+  }, [category, articles])
 
   useEffect(() => {
     setCompare([])
   }, [category])
 
   return (
-    <DataContext.Provider value={{ category, setCategory, articles, setArticles, compare, setCompare }}>
+    <DataContext.Provider
+      value={{ category, setCategory, articles, setArticles, compare, setCompare }}
+    >
       {children}
     </DataContext.Provider>
   )

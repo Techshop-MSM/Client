@@ -1,9 +1,7 @@
 import { useContext } from 'react'
 import { DataContext } from '../../global/useContext'
 
-export const getDetails = (art) => {
-  const { category } = useContext(DataContext)
-
+export const getDetails = (art, category) => {
   switch (category) {
     case 'case':
       return (
