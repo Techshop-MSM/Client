@@ -10,7 +10,7 @@ import { Footer } from './components/reusables/parts/Footer'
 // PageRoutes
 import { Home } from './components/public/landingpage'
 import { Shop } from './components/public/shop'
-import { Basket } from './components/public/Basket'
+import { Basket } from './components/public/basket'
 
 // User & Company
 import { Dashboard } from './components/user/dashboard'
