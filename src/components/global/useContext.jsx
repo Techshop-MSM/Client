@@ -25,7 +25,6 @@ export const UserProvider = ({ children }) => {
     token ? saveInLocalStorage('auth', token) : deleteInLocalStorage('auth')
     userData ? saveInLocalStorage('user', userData) : deleteInLocalStorage('user')
   }, [token])
-  
 
   return (
     <AppContext.Provider value={{ token, setToken, userData, setUserData }}>
@@ -43,11 +42,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     saveInLocalStorage('cat', category)
     saveInLocalStorage('articles', articles)
-<<<<<<< HEAD
   }, [category, articles])
-=======
-  }, [category, articles, compare])
->>>>>>> 2a60bf70ca65acdd1655229835a78c8200b3a551
 
   useEffect(() => {
     setCompare([])
